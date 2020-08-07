@@ -5,7 +5,7 @@ import Home from '../../modules/Home/Home';
 import About from '../../modules/About/About';
 
 
-const Router = () => {
+const Main = () => {
   return (
     <Switch> {/* The Switch decides which component to show based on the current URL.*/}
       <Route exact path='/' component={Home}></Route>
@@ -14,4 +14,4 @@ const Router = () => {
   );
 }
 
-export default Router;
+export default Main;

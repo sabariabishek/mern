@@ -5,9 +5,9 @@ import './Footer.scss';
 
 function Footer() {
   return (
-    <footer className="">
-      <ul className="">
-        <a href="" className=""><li>footer</li></a>
+    <footer className="footer">
+      <ul className="footer__list">
+        <a href="" className="footer__list__item"><li>footer</li></a>
       </ul>
     </footer>
   );

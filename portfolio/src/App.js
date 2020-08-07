@@ -13,10 +13,14 @@ import './App.scss';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main />
-    </>
+    <main className="main">
+      <section className="main__section">
+        <Header />
+        <Main />
+        <Aside />
+      </section>
+      <Footer />
+    </main>
   );
 }
 

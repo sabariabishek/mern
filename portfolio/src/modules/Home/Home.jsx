@@ -1,12 +1,14 @@
 import React from 'react';
 
 import './Home.scss';
+import Content from '../../components/Content/Content.jsx';
 
-function Home() {
+
+const Home = () => {
   return (
-    <aside className="hello">
-      <h2 className="">Home</h2>
-    </aside>
+    <section className="content">
+      <Content />
+    </section>
   );
 }
 

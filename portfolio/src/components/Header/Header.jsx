@@ -1,19 +1,21 @@
 import React from 'react';
 
 import './Header.scss';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import SectionHeader from '../SectionHeader/SectionHeader';
 
 
 function Header() {
   return (
-    <header className="">
-        <img src="" alt="" className=""/>
-        <nav className="">
-        	<ul className="">
-            <Link to="/" exact>Home</Link>
-            <Link to="/about" exact>About</Link>
-          </ul>
-        </nav>
+    <header className="header">
+      <SectionHeader />
+      <img src="" alt="" className="header__logo"/>
+      <nav className="header__navigation">
+        <ul className="header__navigation__list">
+          <NavLink to="/" exact>Home</NavLink>
+          <NavLink to="/about" exact>About</NavLink>
+        </ul>
+      </nav>
     </header>
   );
 }

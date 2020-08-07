@@ -1,12 +1,14 @@
 import React from 'react';
 
 import './About.scss';
+import Content from '../../components/Content/Content.jsx';
 
-function About() {
+
+const About = () => {
   return (
-    <aside className="hello">
-      <h2 className="">About</h2>
-    </aside>
+    <section className="content">
+      <Content />
+    </section>
   );
 }
 
