@@ -5,16 +5,69 @@
   flex-direction: column;
   width: 25%;
   height: 100vh;
-  background-color: $background-dark;
+  margin-top: 50px;
 
   &__navigation {
     text-align: right;
 
     &__list {
+      position: fixed;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
       list-style-type: none;
-      text-decoration: none;
+      margin-right: 30px;
+
+      a {
+        text-decoration: none;
+        color: $lightgrey;
+      }
+
+      a:hover {
+        color: $teal-light;
+      }
+
+      .active {
+        text-decoration: underline;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 20px;
+          width: 35px;
+        }
+
+        &__text {
+          margin-right: 20px;
+          font-family: $header-font;
+          font-size: 1.5em;
+          font-weight: 500;
+        }
+
+        &__button {
+          position: fixed;
+          top: 15px;
+          right: 30px;
+          background-color: $orange-dark;
+          border: none;
+          border-radius: 25px;
+          transition: ease-in-out 0.5s;
+          
+          &:hover {
+            background-color: $orange-light;
+          }
+
+          svg {
+            width: auto;
+            height: 30px;
+            margin: 5px 15px 5px 20px;
+          }
+        }
+      }
     }
   }
 }

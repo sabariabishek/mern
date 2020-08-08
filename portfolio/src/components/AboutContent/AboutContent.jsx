@@ -1,14 +1,14 @@
 import React from 'react';
 
-import './Content.scss';
+import './AboutContent.scss';
 
-function Content() {
+function AboutContent() {
   return (
     <section className="content">
       <span className="content__divider"></span>
-      <h1 className="">Content</h1>
+      <h1 className="">aboutContent</h1>
     </section>
   );
 }
 
-export default Content;
+export default AboutContent;
