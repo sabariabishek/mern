@@ -11,7 +11,29 @@ import Main from './components/Main/Main.jsx';
 
 import './App.scss';
 
-function App() {
+const App = () => {
+  const [projectData, setProjectData] = React.useState({
+    id: '',
+    projectName: '',
+    type: '',
+    year: '',
+    tags: [''],
+    image: '',
+    description: ''
+  });
+
+  React.useEffect(() => {
+    const getProjects = () => {
+      fetch('/api/projects')
+      .then(res => res.json())
+      .then(data => setProjectData(data))
+      .catch(error => console.log(error))
+    }
+    getProjects()
+  }, [])
+
+  console.log(projectData)
+
   return (
     <main className="main">
       <section className="main__section">
