@@ -10,13 +10,13 @@
       "description":"A description describing the project"
     }, 
     {
-      "id":"02",
-      "projectName":"value2",
-      "type":"value2",
-      "year":"value2",
-      "tags":"value2",
-      "image":"value2",
-      "description":"value2"
+      "id": 2,
+      "projectName": "Another",
+      "type": "Dev",
+      "year": "2020",
+      "tags": ["Dev", "Design"],
+      "image": "../../public/images/paint-brush.svg",
+      "description": "Another description that is longer"
     }, 
     {
       "id":"03",
