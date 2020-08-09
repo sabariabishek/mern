@@ -4,10 +4,12 @@ import './Home.scss';
 import Content from '../../components/Content/Content.jsx';
 
 
-const Home = () => {
+const Home = (props) => {
+  const { projectData } = props;
+
   return (
     <>
-      <Content />
+      <Content projectData={projectData}/>
     </>
   );
 }

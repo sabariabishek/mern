@@ -4,15 +4,17 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../../modules/Home/Home';
 import About from '../../modules/About/About';
 import Contact from '../../modules/Contact/Contact';
+import AboutContent from '../AboutContent/AboutContent';
 
 
-
-const Main = () => {
+const Main = (props) => {
+  console.log(props)
+  const { projectData } = props;
   return (
-    <Switch> {/* The Switch decides which component to show based on the current URL.*/}
-      <Route exact path='/' component={Home}></Route>
-      <Route exact path='/about' component={About}></Route>
-      <Route exact path='/contact' component={Contact}></Route>
+    <Switch> 
+      <Route exact path='/' render={(props) => <Home {...props} projectData={projectData}/>}></Route>
+      <Route exact path='/about' render={(props) => <About {...props} projectData={projectData}/>}></Route>
+      <Route exact path='/contact' render={(props) => <Home {...props} projectData={projectData}/>}></Route>
     </Switch>
   );
 }

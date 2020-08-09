@@ -4,10 +4,12 @@ import './About.scss';
 import AboutContent from '../../components/AboutContent/AboutContent.jsx';
 
 
-const About = () => {
+const About = (props) => {
+  const { projectData } = props;
+
   return (
     <>
-      <AboutContent />
+      <AboutContent projectData={projectData}/>
     </>
   );
 }

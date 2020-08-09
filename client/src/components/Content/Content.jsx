@@ -2,7 +2,8 @@ import React from 'react';
 
 import './Content.scss';
 
-function Content() {
+function Content({ projectData }) {
+  console.log(projectData)
   return (
     <section className="content">
       <span className="content__divider"></span>

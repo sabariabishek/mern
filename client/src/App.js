@@ -38,7 +38,7 @@ const App = () => {
     <main className="main">
       <section className="main__section">
         <Header />
-        <Main />
+        <Main projectData={projectData}/>
         <Aside />
       </section>
       <Footer />
