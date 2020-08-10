@@ -12,19 +12,11 @@ import Main from './components/Main/Main.jsx';
 import './App.scss';
 
 const App = () => {
-  const [projectData, setProjectData] = React.useState({
-    id: '',
-    projectName: '',
-    type: '',
-    year: '',
-    tags: [''],
-    image: '',
-    description: ''
-  });
+  const [projectData, setProjectData] = React.useState([]);
 
   React.useEffect(() => {
     const getProjects = () => {
-      fetch('/api/projects')
+      fetch('/api/data')
       .then(res => res.json())
       .then(data => setProjectData(data))
       .catch(error => console.log(error))

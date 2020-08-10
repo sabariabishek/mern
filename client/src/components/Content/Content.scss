@@ -12,4 +12,30 @@
     height: 5px;
     background-color: grey;
   }
+
+  &__item {
+    background-color: $background-light;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 3px;
+
+    &__header {
+      &__title {
+
+      }
+    }
+
+    &__tags {
+      &__button {
+        min-width: 30px;
+        margin: 5px;
+        padding: 3px 7px;
+        border: 1.5px solid white;
+        border-radius: 15px;
+        background-color: $background-light;
+        color: $white;
+
+      }
+    }
+  }
 }
