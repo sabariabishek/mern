@@ -14,19 +14,21 @@ function Content({ projectData }) {
         return (
             <article key={index} className="content__item">
               <div className="content__item__header">
-                <h2 className="content__item__header__title">{item.projectName}</h2>
+                <div className="content__item__header__title">
+                  <h2 className="content__item__header__title__text">{item.projectName}</h2>
+                </div>
+                <div className="content__item__tags">
+                  <button className="content__item__tags__button">{item.tags[0]}</button>
+                  <button className="content__item__tags__button">{item.tags[1]}</button>
+                </div>
               </div>
               <div className="content__item__image">
-                <img src="" alt="" srcset=""/>
+                <img src={item.image} alt="" srcset="" className="content__item__image__img"/>
               </div>
               <div className="content__item__description">
                 <p className="content__item__description__p">
                   {item.description}
                 </p>
-              </div>
-              <div className="content__item__tags">
-                <button className="content__item__tags__button">{item.tags[0]}</button>
-                <button className="content__item__tags__button">{item.tags[1]}</button>
               </div>
             </article>
           );

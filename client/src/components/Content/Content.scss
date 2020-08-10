@@ -1,9 +1,12 @@
 @import "../variables.scss";
 
 .content {
+  position: relative;
   width: 45%;
-  min-height: 100vh;
+  height: 100vh;
   border: 1px solid $background-dark;
+  overflow: scroll;
+  overflow-x: hidden;
 
   &__divider {
     display: block;
@@ -20,8 +23,20 @@
     border-radius: 3px;
 
     &__header {
-      &__title {
+      display: flex;
+      justify-content: space-between;
 
+      &__title {
+        &__text {
+
+        }
+      }
+    }
+
+    &__image {
+      &__img {
+        width: 100%;
+        height: auto;
       }
     }
 
