@@ -5,11 +5,12 @@ import { Link, NavLink } from 'react-router-dom';
 import { HomeIcon, AboutIcon, ContactIcon } from '../../Icons/Icons'
 
 
-const Header = () => {
+const Header = ({ menuOpen }) => {
 
   return (
     <header className="header">
       <img src="" alt="" className="header__logo"/>
+      {menuOpen ? 
       <nav className="header__navigation">
         <ul className="header__navigation__list">
           <NavLink to="/" exact>
@@ -25,13 +26,15 @@ const Header = () => {
             </article>
           </NavLink>
         </ul>
-        <NavLink to="/contact" exact>
-            <button className="header__navigation__list__item header__navigation__list__item__button">
+      </nav> 
+      : null
+      }
+      <NavLink to="/contact" exact>
+            <button className="header__button">
               <ContactIcon />
-              <h2 className="header__navigation__list__item__text">contact</h2>
+              <h2 className="header__button__text">contact</h2>
             </button>
-          </NavLink>
-      </nav>
+        </NavLink>
     </header>
   );
 }

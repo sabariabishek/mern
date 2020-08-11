@@ -6,7 +6,9 @@ function AboutContent(props) {
   return (
     <section className="content">
       <span className="content__divider"></span>
-      <h1 className="">aboutContent</h1>
+      <article className="content__item">
+        <h1 className="">aboutContent</h1>
+      </article>
     </section>
   );
 }

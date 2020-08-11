@@ -38,7 +38,7 @@ const App = () => {
             }} className="main__section__menu">
           {!menuOpen ? <Menu /> : <Close />}
         </a>
-        {menuOpen ? <Header /> : null}
+        <Header menuOpen={menuOpen}/>
         <Main projectData={projectData}/>
         <Aside />
       </section>
