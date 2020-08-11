@@ -14,7 +14,7 @@ function Content({ projectData, openModal }) {
             <article key={index} className={`content__item content__item--${item.id}`} 
             onClick={(e) => {
               e.preventDefault();
-              openModal()
+              openModal(e.currentTarget, index)
               }}>
               <div className="content__item__header">
                 <div className="content__item__header__title">
