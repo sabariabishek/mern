@@ -42,10 +42,15 @@
         }
 
         &__text {
+          display: none;
           margin-right: 20px;
           font-family: $header-font;
           font-size: 1.5em;
           font-weight: 500;
+          
+          @media (min-width: $breakpoint-md) {
+            display: block;
+          }
         }
 
         &__button {

@@ -5,7 +5,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { HomeIcon, AboutIcon, ContactIcon } from '../../Icons/Icons'
 
 
-function Header() {
+const Header = () => {
+
   return (
     <header className="header">
       <img src="" alt="" className="header__logo"/>

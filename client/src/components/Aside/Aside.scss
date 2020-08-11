@@ -1,6 +1,11 @@
 @import "../variables.scss";
 
 .sidebar {
+  display: none;
   width: 30%;
   height: 100vh;
+  
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
 }

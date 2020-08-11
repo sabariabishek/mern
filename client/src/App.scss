@@ -27,11 +27,20 @@ body {
   flex-direction: column;
 }
 
-.main__section {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  min-height: 100vh;
-  margin: 0 auto;
+.main{
+  &__section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+      
+    &__menu {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 90;
+    }
+  }
 }

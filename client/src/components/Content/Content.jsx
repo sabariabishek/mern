@@ -4,12 +4,12 @@ import ContentItem from '../ContentItem/ContentItem';
 import './Content.scss';
 
 function Content({ projectData, openModal }) {
-  console.log(openModal)
 
   return (
     <section className="content--home">
       <span className="content__divider"></span>
       {projectData.map((item, index) => {
+        
         return (
             <article key={index} className={`content__item content__item--${item.id}`} 
             onClick={(e) => {

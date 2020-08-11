@@ -1,14 +1,10 @@
 @import "../variables.scss";
 
-.content {
-  &__item {
-    &__modal {
+.modal {
       position: fixed;
       top: 15px;
       left: 15px;
       width: 50%;
       height: 50vh;
       background-color: pink;
-    }
-  }
 }
