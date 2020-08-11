@@ -1,11 +1,10 @@
 import React from 'react';
 
-//import './ContentItem.scss';
+import './ContentItem.scss';
 
-function ContentItem(information) {
-
+function ContentItem({ projectData }) {
   return (
-    <article><h2>{information.year}</h2></article>
+    <article className="content__item__modal"><h2>hello</h2></article>
   );
 }
 

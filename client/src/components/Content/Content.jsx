@@ -3,16 +3,19 @@ import ContentItem from '../ContentItem/ContentItem';
 
 import './Content.scss';
 
-function Content({ projectData }) {
-  console.log(projectData[0])
+function Content({ projectData, openModal }) {
+  console.log(openModal)
 
   return (
-    <section className="content">
+    <section className="content--home">
       <span className="content__divider"></span>
-      <h1 className="">Content</h1>
       {projectData.map((item, index) => {
         return (
-            <article key={index} className="content__item">
+            <article key={index} className={`content__item content__item--${item.id}`} 
+            onClick={(e) => {
+              e.preventDefault();
+              openModal()
+              }}>
               <div className="content__item__header">
                 <div className="content__item__header__title">
                   <h2 className="content__item__header__title__text">{item.projectName}</h2>
