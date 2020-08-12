@@ -15,10 +15,14 @@ const Home = (props) => {
     {!modal ? setClickedProject(projectData[index]) : setClickedProject('')}
   }
 
+  const clickCloseModal = () => {
+    {modal ? setModal(false) : setModal(true)}
+  }
+
   return (
     <section className="content">
       <Content projectData={projectData} openModal={openModal}/>
-      {modal ? <ContentItem projectData={projectData} clickedProject={clickedProject}/> : null }
+      {modal ? <ContentItem projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal}/> : null }
     </section>
   );
 }
