@@ -25,19 +25,17 @@ body {
   background-color: $black;
 }
 
+
 .main {
   display: flex;
   flex-direction: column;
-}
 
-.main{
   &__section {
     display: flex;
     flex-direction: row;
     width: 100%;
     max-width: 1200px;
     min-height: 100vh;
-    margin: 0 auto;
       
     &__menu {
       position: fixed;
