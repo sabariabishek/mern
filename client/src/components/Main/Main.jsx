@@ -8,7 +8,6 @@ import AboutContent from '../AboutContent/AboutContent';
 
 
 const Main = (props) => {
-  console.log(props)
   const { projectData } = props;
   return (
     <Switch> 

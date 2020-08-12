@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Home.scss';
 import Content from '../../components/Content/Content.jsx';
-import ContentItem from '../../components/ContentItem/ContentItem';
+import ContentItem from '../../components/Modal/Modal';
 
 
 const Home = (props) => {

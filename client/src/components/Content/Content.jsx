@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentItem from '../ContentItem/ContentItem';
+import ContentItem from '../Modal/Modal';
 
 import './Content.scss';
 
