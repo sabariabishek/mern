@@ -3,7 +3,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 30%;
   height: 100vh;
 
   &__navigation {
@@ -37,9 +37,6 @@
         svg {
           width: 25px;
 
-          @media (min-width: $breakpoint-md) {
-           width: 35px;
-          }
         }
 
         &__text {

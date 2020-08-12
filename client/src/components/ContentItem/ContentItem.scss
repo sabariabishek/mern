@@ -1,10 +1,18 @@
 @import "../variables.scss";
 
 .modal {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      width: 50%;
-      height: 50vh;
-      background-color: pink;
+	position: fixed;
+	top: 15px;
+	left: 14.5%;
+	width: 70%;
+	height: 90vh;
+	padding: 15px;
+	background-color: #485460;
+	border-radius: 7px;
+	z-index: 99;
+			
+		&__header {
+			display: flex;
+			justify-content: space-between; 
+		}
 }
