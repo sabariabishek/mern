@@ -1,12 +1,11 @@
 import React from 'react';
 
 import './Modal.scss';
-
+import Gallery from '../Gallery/Gallery'
 import { Close } from '../../Icons/Icons';
 
 
-function ContentItem({ clickedProject, clickCloseModal }) {
-
+const ContentItem = ({ clickedProject, clickCloseModal }) => {
   return (
     <section className="modal">
       <article className="modal__header">
@@ -22,9 +21,7 @@ function ContentItem({ clickedProject, clickCloseModal }) {
           </a>
         </div>
       </article>
-      <article className="modal__gallery">
-        <div>Make the images in the database into an array and display them here</div>
-      </article>
+      <Gallery clickedProject={clickedProject} />
       <article className="modal__content">
         <h3>Description:</h3><p>{clickedProject.description}</p>
       </article>
