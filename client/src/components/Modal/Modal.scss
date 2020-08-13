@@ -14,5 +14,13 @@
 		&__header {
 			display: flex;
 			justify-content: space-between; 
+
+			&__title {
+				&__text {
+					font-family: $header-font;
+					letter-spacing: 1.3px;
+          font-weight: 500;
+				}
+			}
 		}
 }

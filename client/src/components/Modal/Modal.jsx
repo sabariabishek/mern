@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ContentItem.scss';
+import './Modal.scss';
 
 import { Close } from '../../Icons/Icons';
 

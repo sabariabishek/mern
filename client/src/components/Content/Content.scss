@@ -28,7 +28,9 @@
 
       &__title {
         &__text {
-
+          font-family: $header-font;
+          letter-spacing: 1.3px;
+          font-weight: 500;
         }
       }
     }
