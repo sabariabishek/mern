@@ -1,10 +1,13 @@
 import React from 'react';
 import { Router, Route, Switch } from "react-router";
 
+import { Link, NavLink } from 'react-router-dom';
+import { HomeIcon, AboutIcon, ContactIcon, Menu, Close } from './Icons/Icons'
+
 import Header from './components/Header/Header.jsx';
 import Aside from './components/Aside/Aside.jsx';
 import Main from './components/Main/Main.jsx';
-import { Menu, Close } from './Icons/Icons'
+import TopBar from './components/TopBar/TopBar.jsx';
 
 
 
@@ -32,12 +35,7 @@ const App = () => {
   return (
     <main className="main">
       <section className="main__section">
-        <a onClick={(e) => {
-            e.preventDefault();
-            openMenu(e.currentTarget)
-            }} className="main__section__menu">
-          {!menuOpen ? <Menu /> : <Close />}
-        </a>
+        <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
         <Main projectData={projectData}/>
         <Aside />

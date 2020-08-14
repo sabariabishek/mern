@@ -3,13 +3,21 @@
 .modal {
 	position: fixed;
 	top: 15px;
-	left: 14.5%;
-	width: 70%;
-	height: 90vh;
-	padding: 15px;
+	left: 2.5%;
+	width: 95%;
+	height: 95vh;
+	padding: 5px;
 	background-color: #485460;
 	border-radius: 7px;
-	z-index: 99;
+	z-index: 5000;
+
+	@media (min-width: $breakpoint-md) {
+		position: fixed;
+		top: 15px;
+		left: 14.5%;
+		width: 70%;
+		padding: 15px;
+	}
 			
 		&__header {
 			display: flex;

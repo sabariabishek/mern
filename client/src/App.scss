@@ -35,12 +35,13 @@ body {
     flex-direction: row;
     width: 100%;
     min-height: 100vh;
-      
+
     &__menu {
       position: fixed;
       top: 5px;
       left: 15px;
       z-index: 90;
+      cursor: pointer;
 
       svg {
         width: 25px;

@@ -7,7 +7,6 @@ function Content({ projectData, openModal }) {
 
   return (
     <section className="content--home">
-      <span className="content__divider"></span>
       {projectData.map((item, index) => {
         
         return (
