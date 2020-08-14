@@ -2,6 +2,7 @@ import React from 'react';
 import ContentItem from '../Modal/Modal';
 
 import './Content.scss';
+import { Magnifier } from '../../Icons/Icons';
 
 function Content({ projectData, openModal }) {
 
@@ -27,11 +28,14 @@ function Content({ projectData, openModal }) {
               <div className="content__item__image">
                 <img src={item.image} alt="" srcset="" className="content__item__image__img"/>
               </div>
-              <div className="content__item__description">
+              <div>
+                <Magnifier />
+              </div>
+              {/* <div className="content__item__description">
                 <p className="content__item__description__p">
                   {item.description}
                 </p>
-              </div>
+              </div> */}
             </article>
           );
         })}
