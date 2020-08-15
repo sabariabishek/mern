@@ -27,7 +27,6 @@
     width: 100%;
     background-color: $background-light;
     margin: 15px;
-    padding: 5px;
     border-radius: 3px;
 
     @media (min-width: $breakpoint-md) {
@@ -36,6 +35,8 @@
 
     &__header {
       position: absolute;
+      top: 5px;
+      left: 10px;
       display: flex;
       justify-content: space-between;
 
@@ -66,6 +67,14 @@
         color: $white;
         cursor: pointer;
       }
+    }
+
+    &__magnifier {
+      position: absolute;
+      top: 38%;
+      left: 41%;
+      width: 25px;
+      cursor: pointer;
     }
   }
 }

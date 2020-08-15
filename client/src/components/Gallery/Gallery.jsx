@@ -1,14 +1,14 @@
 import React from 'react';
 
 import './Gallery.scss';
+import { Left } from '../../Icons/Icons';
 
 
 const Gallery = ({ clickedProject }) => {
   console.log(clickedProject)
   return (
     <article className="modal__gallery">
-      <a href="">Arrow left</a>
-      <a href="">Arrow Right</a>
+      {/* <Left /> */}
       <div className="modal__gallery">
         <img src={clickedProject.image} alt="" className="modal__gallery__image"/>
       </div>
