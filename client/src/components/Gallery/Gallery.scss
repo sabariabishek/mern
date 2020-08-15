@@ -1,8 +1,24 @@
 .modal {
   &__gallery {
     &__image {
-      width: 50%;
-      height: auto;
+      &__img {
+        width: 50%;
+        height: auto;
+      }
     }
+
+    &__thumbnails {
+      display: flex;
+      flex-wrap: wrap;    
+    }
+  }
+}
+
+.thumbnail {
+  &__image {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    object-fit: cover;
   }
 }

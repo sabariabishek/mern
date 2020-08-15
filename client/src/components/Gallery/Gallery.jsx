@@ -34,8 +34,17 @@ const Gallery = ({ clickedProject }) => {
               e.preventDefault();
               nextImage()
               }}>Right</a>
-      <div className="modal__gallery">
-        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image"/>
+      <div className="modal__gallery__image">
+        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
+      </div>
+      <div className="modal__gallery__thumbnails">
+      {gallery.map((image, index) => {
+        return (
+          <div key={index} className="thumbnail">
+            <img src={image} alt="" className="thumbnail__image"/>
+          </div>
+        )
+      })}
       </div>
     </article>
   );
