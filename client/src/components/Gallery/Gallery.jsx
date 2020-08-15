@@ -5,12 +5,28 @@ import { Left } from '../../Icons/Icons';
 
 
 const Gallery = ({ clickedProject }) => {
-  console.log(clickedProject)
+  const [imageNumber, setImageNumber] = React.useState(0);
+  const gallery = clickedProject.gallery;
+
+  const nextImage = () => {
+    setImageNumber(imageNumber + 1)
+  }
+  const prevImage = () => {
+    setImageNumber(imageNumber - 1)
+  }
+
   return (
     <article className="modal__gallery">
-      {/* <Left /> */}
+      <a href="" onClick={(e) => {
+              e.preventDefault();
+              prevImage()
+              }}>Left</a>
+      <a href="" onClick={(e) => {
+              e.preventDefault();
+              nextImage()
+              }}>Right</a>
       <div className="modal__gallery">
-        <img src={clickedProject.image} alt="" className="modal__gallery__image"/>
+        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image"/>
       </div>
     </article>
   );

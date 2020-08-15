@@ -26,7 +26,7 @@ function Content({ projectData, openModal }) {
                 </div>
               </div>
               <div className="content__item__image">
-                <img src={item.image} alt="" srcset="" className="content__item__image__img"/>
+                <img src={item.image} alt="" srcSet="" className="content__item__image__img"/>
               </div>
               <div className="content__item__magnifier">
                 <Magnifier />
