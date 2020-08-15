@@ -7,11 +7,20 @@ import { Left } from '../../Icons/Icons';
 const Gallery = ({ clickedProject }) => {
   const [imageNumber, setImageNumber] = React.useState(0);
   const gallery = clickedProject.gallery;
+  const galleryImages = gallery.length;
 
   const nextImage = () => {
-    setImageNumber(imageNumber + 1)
+    if (imageNumber === galleryImages - 1) {
+      setImageNumber(0)
+    } else if (imageNumber < gallery.length){
+      setImageNumber(imageNumber + 1)
+    }
   }
+ 
   const prevImage = () => {
+    if (imageNumber <= 0) {
+      setImageNumber(galleryImages - 1)
+    } else if (imageNumber > 0)
     setImageNumber(imageNumber - 1)
   }
 
