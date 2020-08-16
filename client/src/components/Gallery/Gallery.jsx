@@ -25,6 +25,10 @@ const Gallery = ({ clickedProject }) => {
     setImageNumber(imageNumber - 1)
   }
 
+  const clickedThumbnail = (image) => {
+    setImageNumber(image)
+  }
+
   return (
     <article className="modal__gallery">
       <a href="" onClick={(e) => {
@@ -38,7 +42,7 @@ const Gallery = ({ clickedProject }) => {
       <div className="modal__gallery__image">
         <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
       </div>
-      <Thumbnails clickedProject={clickedProject}/>
+      <Thumbnails clickedProject={clickedProject} clickedThumbnail={clickedThumbnail}/>
     </article>
   );
 }
