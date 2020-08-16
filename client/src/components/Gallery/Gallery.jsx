@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Gallery.scss';
 import { Left } from '../../Icons/Icons';
+import Thumbnails from '../Thumbnails/Thumbnails';
 
 
 const Gallery = ({ clickedProject }) => {
@@ -37,15 +38,7 @@ const Gallery = ({ clickedProject }) => {
       <div className="modal__gallery__image">
         <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
       </div>
-      <div className="modal__gallery__thumbnails">
-      {gallery.map((image, index) => {
-        return (
-          <div key={index} className="thumbnail">
-            <img src={image} alt="" className="thumbnail__image"/>
-          </div>
-        )
-      })}
-      </div>
+      <Thumbnails clickedProject={clickedProject}/>
     </article>
   );
 }
