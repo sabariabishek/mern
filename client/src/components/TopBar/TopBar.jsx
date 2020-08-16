@@ -18,7 +18,6 @@ const TopBar = ({openMenu, menuOpen}) => {
       <NavLink to="/contact" exact>
         <button className="header__button">
           <ContactIcon />
-          <h2 className="header__button__text">contact</h2>
         </button>
       </NavLink>
     </section>

@@ -5,7 +5,7 @@
 	top: 15px;
 	left: 2.5%;
 	width: 95%;
-	height: 95vh;
+	height: 90vh;
 	padding: 5px;
 	background-color: #485460;
 	border-radius: 7px;
@@ -13,8 +13,8 @@
 
 	@media (min-width: $breakpoint-md) {
 		position: fixed;
-		top: 15px;
-		left: 14.5%;
+    top: 57px;
+    left: 63px;
 		width: 70%;
 		padding: 15px;
 	}

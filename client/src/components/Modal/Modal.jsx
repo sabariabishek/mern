@@ -5,7 +5,7 @@ import Gallery from '../Gallery/Gallery'
 import { Close } from '../../Icons/Icons';
 
 
-const ContentItem = ({ clickedProject, clickCloseModal }) => {
+const Modal = ({ clickedProject, clickCloseModal }) => {
   return (
     <section className="modal">
       <article className="modal__header">
@@ -29,4 +29,4 @@ const ContentItem = ({ clickedProject, clickCloseModal }) => {
   );
 }
 
-export default ContentItem;
+export default Modal;
