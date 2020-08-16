@@ -9,7 +9,10 @@ const Project = new Schema(
         year: { type: String, required: true },
         tags: { type: [String], required: true },
         image: { type: String, required: true },
+        gallery: { type: [String], required: true },
+        thumbnail: { type: [String], required: true },
         description: { type: String, required: true },
+        favourite: { type: Boolean, required: true },
     },
     { timestamps: true },
 )
