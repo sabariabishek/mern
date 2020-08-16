@@ -1,14 +1,35 @@
 @import "../variables.scss";
 
 .main {
+  display: flex;
+  flex-direction: column;
   &__section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+
     &__topbar {
       width: 100%;
       height: 50px;
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 1000;
+      z-index: 10000;
+      background-color: $background-light;
+    }
+
+    &__menu {
+      position: fixed;
+      top: 15px;
+      left: 14px;
+      z-index: 90;
+      cursor: pointer;
+
+      svg {
+        width: 25px;
+      }
     }
   }
 }
+

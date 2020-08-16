@@ -21,7 +21,6 @@ const TopBar = ({openMenu, menuOpen}) => {
           <h2 className="header__button__text">contact</h2>
         </button>
       </NavLink>
-      <span className="content__divider"></span>
     </section>
   );
 }

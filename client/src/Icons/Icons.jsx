@@ -170,8 +170,8 @@ export const ContactIcon = () => (
 export const Close = () => (
 	<svg
 		viewBox="0 0 500 500"
-		width="50"
-		height="50"
+		width="20"
+		height="20"
 		fill="#fff"
 		xmlns="http://www.w3.org/2000/svg"
 	>
@@ -220,8 +220,8 @@ export const Close = () => (
 export const Menu = () => (
 	<svg
 		viewBox="0 0 500 500"
-		width="50"
-		height="50"
+		width="35"
+		height="35"
 		fill="#fff"
 		xmlns="http://www.w3.org/2000/svg"
 	>
