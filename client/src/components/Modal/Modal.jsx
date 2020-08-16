@@ -16,7 +16,7 @@ const Modal = ({ clickedProject, clickCloseModal }) => {
           <a href="" onClick={(e) => {
               e.preventDefault();
               clickCloseModal(e.currentTarget)
-              }}>
+              }} className="modal__header__close">
             <Close />
           </a>
         </div>

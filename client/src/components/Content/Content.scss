@@ -68,10 +68,11 @@
         min-width: 30px;
         margin: 5px;
         padding: 3px 7px;
-        border: 1.5px solid white;
+        border: 1px solid white;
         border-radius: 15px;
-        background-color: $black;
+        background-color: $background-dark;
         color: $white;
+        text-transform: lowercase;
         cursor: pointer;
       }
     }

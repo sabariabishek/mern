@@ -28,5 +28,11 @@
           font-weight: 500;
 				}
 			}
+
+			&__close {
+				svg {
+					fill: #000;
+				}
+			}
 		}
 }

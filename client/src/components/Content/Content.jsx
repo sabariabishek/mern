@@ -27,9 +27,9 @@ function Content({ projectData, openModal, clickCloseModal, clickedProject, moda
               <div className="content__item__image">
                 <img src={item.image} alt="" srcSet="" className="content__item__image__img"/>
               </div>
-              <div className="content__item__magnifier">
+              {/* <div className="content__item__magnifier">
                 <Magnifier />
-              </div>
+              </div> */}
               {/* <div className="content__item__description">
                 <p className="content__item__description__p">
                   {item.description}

@@ -1,0 +1,10 @@
+@import "../variables.scss";
+
+.content {
+  &__about {
+    height: calc(100% - 30px);
+    margin: 15px;
+    padding: 15px;
+    background-color: $background-dark;
+  }
+}
