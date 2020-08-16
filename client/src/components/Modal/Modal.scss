@@ -1,21 +1,19 @@
 @import "../variables.scss";
 
 .modal {
-	position: fixed;
-	top: 15px;
-	left: 2.5%;
-	width: 95%;
-	height: 90vh;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 10px);
+	min-height: calc(100vh - 62px);;
+	margin: 5px;
 	padding: 5px;
-	background-color: #485460;
+	background-color: rgba(245, 245, 245, 0.99);
 	border-radius: 7px;
 	z-index: 50000;
 
 	@media (min-width: $breakpoint-md) {
-		position: fixed;
-    top: 57px;
-    left: 63px;
-		width: 70%;
+		margin: 5px;
 		padding: 15px;
 	}
 			

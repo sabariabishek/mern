@@ -1,9 +1,15 @@
+@import "../variables.scss";
+
 .modal {
   &__gallery {
     &__image {
       &__img {
-        width: 50%;
+        width: 100%;
         height: auto;
+
+        @media (min-width: $breakpoint-md) {
+          width: 50%;
+        }
       }
     }
 

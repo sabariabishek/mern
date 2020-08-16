@@ -21,8 +21,8 @@ const Home = (props) => {
 
   return (
     <section className="content">
-      <Content projectData={projectData} openModal={openModal}/>
-      {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal}/> : null }
+      <Content projectData={projectData} openModal={openModal} clickedProject={clickedProject} clickCloseModal={clickCloseModal} modal={modal}/>
+      {/* {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal}/> : null } */}
     </section>
   );
 }

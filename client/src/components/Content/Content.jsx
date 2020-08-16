@@ -1,15 +1,14 @@
 import React from 'react';
-import ContentItem from '../Modal/Modal';
+import Modal from '../Modal/Modal';
 
 import './Content.scss';
 import { Magnifier } from '../../Icons/Icons';
 
-function Content({ projectData, openModal }) {
+function Content({ projectData, openModal, clickCloseModal, clickedProject, modal }) {
 
   return (
     <section className="content--home">
       {projectData.map((item, index) => {
-        
         return (
             <article key={index} className={`content__item content__item--${item.id}`} 
             onClick={(e) => {
@@ -39,6 +38,7 @@ function Content({ projectData, openModal }) {
             </article>
           );
         })}
+        {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal}/> : null }
     </section>
   );
 }

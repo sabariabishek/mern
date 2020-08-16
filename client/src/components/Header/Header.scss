@@ -11,7 +11,7 @@
     height: 100vh;
     padding-top: 65px;
     z-index: 3900;
-    background-color: $background-light;
+    background-color: $background-dark;
 
     &__list {
       display: flex;
@@ -58,7 +58,7 @@
     position: fixed;
     top: 5px;
     right: 15px;
-    background-color: $orange-dark;
+    background-color: $teal-light;
     border: none;
     border-radius: 25px;
     transition: ease-in-out 0.5s;
