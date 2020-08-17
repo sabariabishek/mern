@@ -2,9 +2,36 @@
 
 .content {
   &__about {
-    height: calc(100% - 30px);
+    display: flex;
+    min-height: calc(100% - 30px);
     margin: 15px;
     padding: 15px;
-    background-color: $background-dark;
+    background-color: rgba(245, 245, 245, 0.99);
+
+    &__image {
+      margin-right: 15px;
+
+      &__img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.information {
+  &__text {
+    display: inline-block;
+
+    &__header {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    &__paragraph {
+      display: contents;
+    }
   }
 }
