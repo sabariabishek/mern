@@ -5,11 +5,11 @@ import AboutContent from '../../components/AboutContent/AboutContent.jsx';
 
 
 const About = (props) => {
-  const { projectData } = props;
+  const { projectData, aboutInfo } = props;
 
   return (
     <>
-      <AboutContent projectData={projectData}/>
+      <AboutContent projectData={projectData} aboutInfo={aboutInfo}/>
     </>
   );
 }

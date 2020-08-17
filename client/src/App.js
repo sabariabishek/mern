@@ -15,6 +15,7 @@ import './App.scss';
 
 const App = () => {
   const [projectData, setProjectData] = React.useState([]);
+  const [aboutInfo, setAboutInfo] = React.useState([]);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const getProjects = () => {
@@ -24,12 +25,20 @@ const App = () => {
     .catch(error => console.log(error))
   }
 
+  const getInfo = () => {
+    fetch('/api/info')
+    .then(res => res.json())
+    .then(data => setAboutInfo(data.data[0]))
+    .catch(error => console.log(error))
+  }
+
   const openMenu = () => {
     {!menuOpen ? setMenuOpen(true) : setMenuOpen (false)}
   }
 
   React.useEffect(() => {
     getProjects()
+    getInfo()
   }, [])
 
   return (
@@ -37,7 +46,7 @@ const App = () => {
       <section className="main__section">
         <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
-        <Main projectData={projectData}/>
+        <Main projectData={projectData} aboutInfo={aboutInfo}/>
         <Aside />
       </section>
     </main>

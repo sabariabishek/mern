@@ -2,7 +2,8 @@ import React from 'react';
 
 import './AboutContent.scss';
 
-function AboutContent(props) {
+const AboutContent = ({ aboutInfo }) => {
+
   return (
     <section className="content">
       <article className="content__about">
