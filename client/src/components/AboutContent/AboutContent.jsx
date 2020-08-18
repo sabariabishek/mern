@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './AboutContent.scss';
+import { Github, LinkedIn } from '../../Icons/Icons';
 
 const AboutContent = ({ aboutInfo }) => {
   const education = aboutInfo.education;
@@ -13,7 +14,17 @@ const AboutContent = ({ aboutInfo }) => {
         </section>
         <section className="content__about__info">
           <section className="information">
-            <article><h2 className="information__name">{aboutInfo.name}</h2></article>
+            <article className="information__header">
+              <h2 className="information__header__name">{aboutInfo.name}</h2>
+              <article className="information__header__links">
+                <a href={aboutInfo.github} className="information__header__links__link">
+                  <Github />
+                </a>
+                <a href={aboutInfo.linkedin} className="information__header__links__link">
+                  <LinkedIn />
+                </a>
+              </article>
+            </article>
             <article className="information__text"><h3 className="information__text__header">Location: </h3><p className="information__text__paragraph">{aboutInfo.city}</p></article>
             <article className="information__text"><h3 className="information__text__header">About: </h3><p className="information__text__paragraph">{aboutInfo.about}</p></article>
             <article className="information__text information__text--tech"><h3 className="information__text__header">Tech: </h3><p className="information__text__paragraph"> {aboutInfo.Tech}</p></article>

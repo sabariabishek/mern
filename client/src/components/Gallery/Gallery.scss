@@ -3,12 +3,18 @@
 .modal {
   &__gallery {
     &__image {
+      width: 100%;
+      
+      @media (min-width: $breakpoint-md) {
+        width: 50%;
+      }
+
       &__img {
         width: 100%;
         height: auto;
 
         @media (min-width: $breakpoint-md) {
-          width: 50%;
+          width: 100%;
         }
       }
     }
@@ -16,6 +22,11 @@
     &__thumbnails {
       display: flex;
       flex-wrap: wrap;    
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

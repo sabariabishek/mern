@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Gallery.scss';
-import { Left } from '../../Icons/Icons';
+import { Left, Right } from '../../Icons/Icons';
 import Thumbnails from '../Thumbnails/Thumbnails';
 
 
@@ -31,15 +31,19 @@ const Gallery = ({ clickedProject }) => {
 
   return (
     <article className="modal__gallery">
-      <a href="" onClick={(e) => {
-              e.preventDefault();
-              prevImage()
-              }}>Left</a>
-      <a href="" onClick={(e) => {
-              e.preventDefault();
-              nextImage()
-              }}>Right</a>
       <div className="modal__gallery__image">
+        <div className="modal__gallery__nav">
+          <a href="" onClick={(e) => {
+                  e.preventDefault();
+                  prevImage()
+                  }}><Left />
+          </a>
+          <a href="" onClick={(e) => {
+                  e.preventDefault();
+                  nextImage()
+                  }}><Right/>
+          </a>
+        </div>
         <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
       </div>
       <Thumbnails clickedProject={clickedProject} clickedThumbnail={clickedThumbnail}/>
