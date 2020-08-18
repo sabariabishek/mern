@@ -13,6 +13,8 @@ const Project = new Schema(
         thumbnail: { type: [String], required: true },
         description: { type: String, required: true },
         favourite: { type: Boolean, required: true },
+        github: { type: String, required: false },
+        link: { type: String, required: false },
     },
     { timestamps: true },
 )

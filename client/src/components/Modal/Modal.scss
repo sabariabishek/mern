@@ -17,22 +17,51 @@
 		padding: 15px;
 	}
 			
-		&__header {
+	&__header {
+		display: flex;
+		justify-content: space-between; 
+
+		&__title {
 			display: flex;
-			justify-content: space-between; 
 
-			&__title {
-				&__text {
-					font-family: $header-font;
-					letter-spacing: 1.3px;
-          font-weight: 500;
-				}
+			&__text {
+				font-family: $header-font;
+				letter-spacing: 1.3px;
+				font-weight: 500;
 			}
+			&__link {
+				margin-left: 15px;
 
-			&__close {
 				svg {
-					fill: #000;
+					transition: ease-in-out 0.5s;
+					cursor: pointer;
+
+					&:hover {
+						fill: $teal-dark;
+					}
 				}
 			}
 		}
+
+		&__close {
+			svg {
+				fill: #000;
+			}
+		}
+	}
+
+	&__content {
+		width: 100%;
+		display: flex;
+		flex-direction: column-reverse;
+
+		@media (min-width: $breakpoint-md) {
+			flex-direction: row;
+		}
+
+		&__info {
+			width: 50%;
+			padding: 15px;
+		}
+	}
 }

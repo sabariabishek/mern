@@ -2,12 +2,14 @@
 
 .modal {
   &__gallery {
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      width: 50%;
+    }
+
     &__image {
       width: 100%;
-      
-      @media (min-width: $breakpoint-md) {
-        width: 50%;
-      }
 
       &__img {
         width: 100%;
