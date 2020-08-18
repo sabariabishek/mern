@@ -12,8 +12,8 @@ const Modal = ({ clickedProject, clickCloseModal }) => {
         <article className="modal__header__title">
           <h2 className="modal__header__title__text">{clickedProject.projectName}</h2>
           <article className="modal__header__title__link">
-            {clickedProject.github ? <a href={clickedProject.github}><Github/></a> : null}
-            {clickedProject.link ? <a href={clickedProject.link}><WebLink/></a> : null}
+            {clickedProject.github ? <a href={clickedProject.github} target="_blank"><Github/></a> : null}
+            {clickedProject.link ? <a href={clickedProject.link} target="_blank"><WebLink/></a> : null}
           </article>
         </article>
         <div className="modal__header__button">

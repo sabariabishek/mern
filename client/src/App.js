@@ -9,8 +9,6 @@ import Aside from './components/Aside/Aside.jsx';
 import Main from './components/Main/Main.jsx';
 import TopBar from './components/TopBar/TopBar.jsx';
 
-
-
 import './App.scss';
 
 const App = () => {

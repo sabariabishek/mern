@@ -20,21 +20,18 @@ function Content({ projectData, openModal, clickCloseModal, clickedProject, moda
                   <h2 className="content__item__header__title__text">{item.projectName}</h2>
                 </div>
                 <div className="content__item__tags">
+                  {/* Fix this dynamically */}
                   <button className="content__item__tags__button">{item.tags[0]}</button>
                   <button className="content__item__tags__button">{item.tags[1]}</button>
+                  <button className="content__item__tags__button">{item.tags[2]}</button>
+                  <button className="content__item__tags__button">{item.tags[3]}</button>
+                  <button className="content__item__tags__button">{item.tags[4]}</button>
+                  <button className="content__item__tags__button">{item.tags[5]}</button>
                 </div>
               </div>
               <div className="content__item__image">
                 <img src={item.image} alt="" srcSet="" className="content__item__image__img"/>
               </div>
-              {/* <div className="content__item__magnifier">
-                <Magnifier />
-              </div> */}
-              {/* <div className="content__item__description">
-                <p className="content__item__description__p">
-                  {item.description}
-                </p>
-              </div> */}
             </article>
           );
         })}

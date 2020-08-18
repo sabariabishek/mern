@@ -15,7 +15,7 @@ const TopBar = ({openMenu, menuOpen}) => {
           }} className="main__section__menu">
         {!menuOpen ? <Menu /> : <Close />}
       </a>
-      <h1 className="main__section__name">Ninni Hagström.</h1>
+      <h1 className="main__section__name">Ninni H.</h1>
       <NavLink to="/contact" exact>
         <button className="header__button">
           <ContactIcon />
