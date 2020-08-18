@@ -2,7 +2,6 @@ import React from 'react';
 import Modal from '../Modal/Modal';
 
 import './Content.scss';
-import { Magnifier } from '../../Icons/Icons';
 
 function Content({ projectData, openModal, clickCloseModal, clickedProject, modal }) {
 
@@ -20,13 +19,13 @@ function Content({ projectData, openModal, clickCloseModal, clickedProject, moda
                   <h2 className="content__item__header__title__text">{item.projectName}</h2>
                 </div>
                 <div className="content__item__tags">
-                  {/* Fix this dynamically */}
-                  <button className="content__item__tags__button">{item.tags[0]}</button>
-                  <button className="content__item__tags__button">{item.tags[1]}</button>
-                  <button className="content__item__tags__button">{item.tags[2]}</button>
-                  <button className="content__item__tags__button">{item.tags[3]}</button>
-                  <button className="content__item__tags__button">{item.tags[4]}</button>
-                  <button className="content__item__tags__button">{item.tags[5]}</button>
+                  {item.tags.map((tags, index) => {
+                    return (
+                      <article key={index}>
+                        <button className="content__item__tags__button">{tags}</button>
+                      </article>
+                    )
+                  })}
                 </div>
               </div>
               <div className="content__item__image">

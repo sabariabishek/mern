@@ -15,6 +15,7 @@ const App = () => {
   const [projectData, setProjectData] = React.useState([]);
   const [aboutInfo, setAboutInfo] = React.useState([]);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [educationData, setEducationData] = React.useState([]);
 
   const getProjects = () => {
     fetch('/api/data')
@@ -30,6 +31,13 @@ const App = () => {
     .catch(error => console.log(error))
   }
 
+  const getEducation = () => {
+    fetch('/api/info')
+    .then(res => res.json())
+    .then(data => setEducationData(data.data[0].education))
+    .catch(error => console.log(error))
+  }
+
   const openMenu = () => {
     {!menuOpen ? setMenuOpen(true) : setMenuOpen (false)}
   }
@@ -37,6 +45,7 @@ const App = () => {
   React.useEffect(() => {
     getProjects()
     getInfo()
+    getEducation()
   }, [])
 
   return (
@@ -44,8 +53,8 @@ const App = () => {
       <section className="main__section">
         <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
-        <Main projectData={projectData} aboutInfo={aboutInfo}/>
-        <Aside />
+        <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData}/>
+        <Aside aboutInfo={aboutInfo}/>
       </section>
     </main>
   );

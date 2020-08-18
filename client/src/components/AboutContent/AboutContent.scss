@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100% - 30px);
-    margin: 15px;
+    margin: 5px;
     padding: 15px;
     background-color: rgba(245, 245, 245, 0.99);
     border-radius: 7px;
@@ -59,12 +59,8 @@
   &__text {
     display: inline-block;
 
-    &--tech {
-      margin: 10px 0;
-      padding: 10px 15px;
-      padding-bottom: 20px;
-      border-radius: 5px;
-      background-color: $lightgrey;
+    &--school {
+      width: 100%;
     }
 
     &__header {
@@ -76,6 +72,27 @@
 
     &__paragraph {
       display: contents;
+    }
+  }
+
+  &__school {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      border-radius: 7px;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #d2dae2;
+
+      &__text {
+        width: 50%;
+        margin: 5px 0;
+      }
     }
   }
 }

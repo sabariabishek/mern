@@ -2,7 +2,6 @@ import React from 'react';
 
 import './Home.scss';
 import Content from '../../components/Content/Content.jsx';
-import Modal from '../../components/Modal/Modal';
 
 
 const Home = (props) => {
@@ -22,7 +21,6 @@ const Home = (props) => {
   return (
     <section className="content">
       <Content projectData={projectData} openModal={openModal} clickedProject={clickedProject} clickCloseModal={clickCloseModal} modal={modal}/>
-      {/* {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal}/> : null } */}
     </section>
   );
 }
