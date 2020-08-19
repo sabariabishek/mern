@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Modal.scss';
 import Gallery from '../Gallery/Gallery'
-import { Close, Github, WebLink } from '../../Icons/Icons';
+import { Close, Github, WebLink, Left, Right } from '../../Icons/Icons';
 
 
 const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }) => {
@@ -32,21 +32,20 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }
           <h3>Description:</h3><p>{clickedProject.description}</p>
         </article>
       </section>
-      <section>
-      <article>
+      <section className="modal__controls">
+        <article className="modal__controls__control">
           <a href="" onClick={(e) => {
                 e.preventDefault();
                 previousProject()
-                }}><h3>Previous project</h3></a>
+                }} className="modal__controls__control__item"><h3><Left />Previous project</h3></a>
         </article>
-        <article>
+        <article className="controls__wrap">
           <a href="" onClick={(e) => {
                 e.preventDefault();
                 nextProject()
-                }}><h3>Next project</h3></a>
+                }} className="modal__controls__control__item"><h3>Next project<Right/></h3></a>
         </article>
       </section>
-
     </section>
   );
 }

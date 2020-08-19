@@ -68,4 +68,17 @@
 			}
 		}
 	}
+
+	&__controls {
+		display: flex;
+		justify-content: space-between;
+	
+		&__control {
+			&__item {
+				
+			}
+		}
+	}
+	
 }
+
