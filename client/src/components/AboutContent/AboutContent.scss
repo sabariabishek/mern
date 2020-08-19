@@ -56,6 +56,11 @@
     }
   }
 
+  &__info {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   &__text {
     display: inline-block;
 
@@ -67,7 +72,6 @@
       display: inline-block;
       margin-top: 10px;
       margin-right: 10px;
-      text-transform: uppercase;
     }
 
     &__paragraph {
@@ -81,17 +85,29 @@
     flex-direction: column-reverse;
 
     &__item {
-      display: flex;
-      flex-wrap: wrap;
       width: 100%;
       border-radius: 7px;
       padding: 15px;
       margin: 10px 0;
       background-color: #d2dae2;
 
-      &__text {
-        width: 50%;
-        margin: 5px 0;
+      &__header {
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      &__description {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__text {
+          width: calc(100% - 10px);
+          margin: 5px 5px;
+
+          @media (min-width: $breakpoint-md) {
+            width: calc(50% - 10px);
+          }
+        }
       }
     }
   }

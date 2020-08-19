@@ -5,7 +5,8 @@ import Gallery from '../Gallery/Gallery'
 import { Close, Github, WebLink } from '../../Icons/Icons';
 
 
-const Modal = ({ clickedProject, clickCloseModal }) => {
+const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }) => {
+
   return (
     <section className="modal">
       <section className="modal__header">
@@ -31,6 +32,21 @@ const Modal = ({ clickedProject, clickCloseModal }) => {
           <h3>Description:</h3><p>{clickedProject.description}</p>
         </article>
       </section>
+      <section>
+      <article>
+          <a href="" onClick={(e) => {
+                e.preventDefault();
+                previousProject()
+                }}><h3>Previous project</h3></a>
+        </article>
+        <article>
+          <a href="" onClick={(e) => {
+                e.preventDefault();
+                nextProject()
+                }}><h3>Next project</h3></a>
+        </article>
+      </section>
+
     </section>
   );
 }

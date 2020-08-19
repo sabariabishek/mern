@@ -24,26 +24,29 @@ const AboutContent = ({ aboutInfo, educationData }) => {
                 </a>
               </article>
             </article>
-            <article className="information__text"><h3 className="information__text__header">Location: </h3><p className="information__text__paragraph">{aboutInfo.city}</p></article>
-            <article className="information__text information__text--tech"><h3 className="information__text__header">Tech: </h3><p className="information__text__paragraph"> {aboutInfo.Tech}</p></article>
-            <article className="information__text"><h3 className="information__text__header">Skills: </h3><p className="information__text__paragraph"> {aboutInfo.skills}</p></article>
-            <article className="information__text"><h3 className="information__text__header">Languages: </h3><p className="information__text__paragraph"> {aboutInfo.languages}</p></article>
-            <article className="information__text"><h3 className="information__text__header">Interests: </h3><p className="information__text__paragraph"> {aboutInfo.interests}</p></article>
-            <article className="information__text information__text--school">
-              <h3 className="information__text__header">Education: </h3>
-                <section className="information__school">
-                  {educationData.map((school, index) => {
-                    return (
-                      <article key={index} className="information__school__item">
-                        <article className="information__school__item__text"><h4>School:</h4> <p>{school.school}</p></article>
-                        <article className="information__school__item__text"><h4>Program:</h4> <p>{school.program}</p></article>
-                        <article className="information__school__item__text"><h4>City:</h4> <p>{school.city}</p></article>
-                        <article className="information__school__item__text"><h4>Year:</h4> <p>{school.year}</p></article>
-                      </article>
-                    );
-                  })}
-                </section>
-            </article>
+            <section className="information__info">  
+              <article className="information__text"><h3 className="information__text__header">Location: </h3><p className="information__text__paragraph">{aboutInfo.city}</p></article>
+              <article className="information__text information__text--tech"><h3 className="information__text__header">Tech: </h3><p className="information__text__paragraph"> {aboutInfo.Tech}</p></article>
+              <article className="information__text"><h3 className="information__text__header">Skills: </h3><p className="information__text__paragraph"> {aboutInfo.skills}</p></article>
+              <article className="information__text"><h3 className="information__text__header">Languages: </h3><p className="information__text__paragraph"> {aboutInfo.languages}</p></article>
+              <article className="information__text"><h3 className="information__text__header">Interests: </h3><p className="information__text__paragraph"> {aboutInfo.interests}</p></article>
+              <article className="information__text information__text--school">
+                <h3 className="information__text__header">Education: </h3>
+                  <section className="information__school">
+                    {educationData.map((school, index) => {
+                      return (
+                        <section key={index} className="information__school__item">
+                          <h4 className="information__school__item__header">{school.city}, {school.year}</h4>
+                          <article className="information__school__item__description">
+                            <article className="information__school__item__description__text"><h4>School:</h4> <p>{school.school}</p></article>
+                            <article className="information__school__item__description__text"><h4>Program:</h4> <p>{school.program}</p></article>
+                          </article>
+                        </section>
+                      );
+                    })}
+                  </section>
+              </article>
+            </section>
           </section>
         </section>
       </article>

@@ -3,7 +3,7 @@ import Modal from '../Modal/Modal';
 
 import './Content.scss';
 
-function Content({ projectData, openModal, clickCloseModal, clickedProject, modal }) {
+function Content({ projectData, projectIndex, openModal, clickCloseModal, clickedProject, modal, nextProject, previousProject }) {
 
   return (
     <section className="content--home">
@@ -34,7 +34,7 @@ function Content({ projectData, openModal, clickCloseModal, clickedProject, moda
             </article>
           );
         })}
-        {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal}/> : null }
+        {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal} projectIndex={projectIndex} nextProject={nextProject} previousProject={previousProject}/> : null }
     </section>
   );
 }
