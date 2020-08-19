@@ -14,6 +14,7 @@ function Content({ projectData, projectIndex, openModal, clickCloseModal, clicke
               e.preventDefault();
               openModal(e.currentTarget, index)
               }}>
+              <div className="content__item__hover"></div>
               <div className="content__item__header">
                 <div className="content__item__header__title">
                   <h2 className="content__item__header__title__text">{item.projectName}</h2>
@@ -31,7 +32,6 @@ function Content({ projectData, projectIndex, openModal, clickCloseModal, clicke
               <div className="content__item__image">
                 <img src={item.image} alt="" srcSet="" className="content__item__image__img"/>
               </div>
-              <div className="content__item__hover"></div>
             </article>
           );
         })}
