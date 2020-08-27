@@ -17,6 +17,11 @@
   }
 
   &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 50px);
+    
     &__p {
       color: $lightgrey;
       padding: 15px;
@@ -24,6 +29,11 @@
       letter-spacing: 1px;
       font-size: 19px;
       text-align: justify;
+
+      &--salt {
+        text-align: right;
+        color: $orange-light;
+      }
     }
   }
 }

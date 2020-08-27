@@ -88,9 +88,10 @@
         padding: 3px 7px;
         border: none;
         border-radius: 15px;
-        background-color: $teal-dark;
-        color: $white;
+        background-color: $background-light;
+        color: $lightgrey;
         text-transform: lowercase;
+        font-style: italic;
         cursor: pointer;
       }
     }
