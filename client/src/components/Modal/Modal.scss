@@ -31,8 +31,10 @@
 			}
 			&__link {
 				margin-left: 15px;
+				display: flex;
 
 				svg {
+					margin-right: 10px;
 					transition: ease-in-out 0.5s;
 					cursor: pointer;
 

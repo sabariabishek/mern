@@ -4,16 +4,14 @@
   &__gallery {
     width: 100%;
 
-    @media (min-width: $breakpoint-md) {
-      width: 50%;
-    }
-
     &__image {
       width: 100%;
 
       &__img {
         width: 100%;
         height: auto;
+        max-height: 500px;
+        object-fit: contain;
 
         @media (min-width: $breakpoint-md) {
           width: 100%;
