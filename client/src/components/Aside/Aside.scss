@@ -1,0 +1,29 @@
+@import "../variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: none;
+  width: 30%;
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
+
+  &__description {
+    &__p {
+      color: $lightgrey;
+      padding: 15px;
+      font-style: italic;
+      letter-spacing: 1px;
+      font-size: 19px;
+      text-align: justify;
+    }
+  }
+}
