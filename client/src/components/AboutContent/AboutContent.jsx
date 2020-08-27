@@ -4,12 +4,11 @@ import './AboutContent.scss';
 import { Github, LinkedIn } from '../../Icons/Icons';
 
 const AboutContent = ({ aboutInfo, educationData }) => {
-  console.log(educationData)
   return (
     <section className="content">
       <article className="content__about">
         <section className="content__about__image">
-          <img src={aboutInfo.image} alt="" className="content__about__image__img"/>
+          <img src={process.env.PUBLIC_URL + aboutInfo.image} alt="" className="content__about__image__img"/>
         </section>
         <section className="content__about__info">
           <section className="information">

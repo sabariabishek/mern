@@ -58,6 +58,8 @@
 
       &__title {
         &__text {
+          color: #fff;
+          text-shadow: 0.5px 0.5px #000;
           font-family: $header-font;
           letter-spacing: 1.3px;
           font-weight: 500;
