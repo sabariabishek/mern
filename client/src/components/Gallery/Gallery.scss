@@ -2,7 +2,13 @@
 
 .modal {
   &__gallery {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
 
     &__image {
       width: 100%;
@@ -21,7 +27,8 @@
 
     &__thumbnails {
       display: flex;
-      flex-wrap: wrap;    
+      flex-wrap: wrap;
+      justify-content: space-evenly;    
     }
 
     &__nav {

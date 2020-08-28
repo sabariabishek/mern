@@ -15,10 +15,10 @@ const AboutContent = ({ aboutInfo, educationData }) => {
             <article className="information__header">
               <h2 className="information__header__name">{aboutInfo.name}</h2>
               <article className="information__header__links">
-                <a href={aboutInfo.github} className="information__header__links__link">
+                <a href={aboutInfo.github} className="information__header__links__link" target="_blank">
                   <Github />
                 </a>
-                <a href={aboutInfo.linkedin} className="information__header__links__link">
+                <a href={aboutInfo.linkedin} className="information__header__links__link" target="_blank">
                   <LinkedIn />
                 </a>
               </article>
