@@ -38,13 +38,15 @@ const Gallery = ({ clickedProject }) => {
                   prevImage()
                   }}><Left />
           </a>
+        </div>
+        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
+        <div>
           <a href="" onClick={(e) => {
                   e.preventDefault();
                   nextImage()
                   }}><Right/>
           </a>
         </div>
-        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
       </div>
       <Thumbnails clickedProject={clickedProject} clickedThumbnail={clickedThumbnail}/>
     </article>

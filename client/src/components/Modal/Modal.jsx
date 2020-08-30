@@ -37,13 +37,13 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }
           <a href="" onClick={(e) => {
                 e.preventDefault();
                 previousProject()
-                }} className="modal__controls__control__item"><h3><Left />Previous project</h3></a>
+                }}><h3 className="modal__controls__control__item"><Left />Previous project</h3></a>
         </article>
-        <article className="controls__wrap">
+        <article className="modal__controls__control">
           <a href="" onClick={(e) => {
                 e.preventDefault();
                 nextProject()
-                }} className="modal__controls__control__item"><h3>Next project<Right/></h3></a>
+                }}><h3 className="modal__controls__control__item">Next project<Right/></h3></a>
         </article>
       </section>
     </section>

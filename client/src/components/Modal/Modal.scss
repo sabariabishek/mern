@@ -19,7 +19,8 @@
 			
 	&__header {
 		display: flex;
-		justify-content: space-between; 
+		justify-content: space-between;
+		margin-bottom: 15px; 
 
 		&__title {
 			display: flex;
@@ -66,7 +67,7 @@
 			padding: 15px;
 
 			@media (min-width: $breakpoint-md) {
-				width: 50%;
+				width: 85%;
 			}
 		}
 	}
@@ -76,10 +77,18 @@
 		justify-content: space-between;
 	
 		&__control {
+			display: flex;
+			align-items: baseline;
+
 			&__item {
+				display: flex;
+				text-transform: uppercase;
+				color: $teal-darker;
+
 				svg {
 					width: 20px;
 					height: auto;
+					margin: 0 10px;
 				}
 			}
 		}

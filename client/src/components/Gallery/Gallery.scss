@@ -6,34 +6,30 @@
     flex-direction: column;
     width: 100%;
 
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row;
-    }
-
     &__image {
+      display: flex;
+      flex-direction: row;
       width: 100%;
+      justify-content: center;
+      align-items: center;
 
       &__img {
-        width: 100%;
+        width: calc(100% - 55px);;
         height: auto;
         max-height: 500px;
         object-fit: contain;
-
-        @media (min-width: $breakpoint-md) {
-          width: 100%;
-        }
       }
     }
 
     &__thumbnails {
       display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-evenly;    
+      justify-content: flex-start;    
     }
 
     &__nav {
-      display: flex;
-      justify-content: space-between;
+
     }
   }
 }
