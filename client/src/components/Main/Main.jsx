@@ -8,11 +8,11 @@ import AboutContent from '../AboutContent/AboutContent';
 
 
 const Main = (props) => {
-  const { projectData, aboutInfo, educationData } = props;
+  const { projectData, aboutInfo, educationData, getDevProjects, getProjects } = props;
   console.log(educationData)
   return (
     <Switch> 
-      <Route exact path='/' render={(props) => <Home {...props} projectData={projectData}/>}></Route>
+      <Route exact path='/' render={(props) => <Home {...props} projectData={projectData} getDevProjects={getDevProjects} getProjects={getProjects}/>}></Route>
       <Route exact path='/about' render={(props) => <About {...props} projectData={projectData} aboutInfo={aboutInfo} educationData={educationData}/>}></Route>
       <Route exact path='/contact' render={(props) => <Home {...props} projectData={projectData}/>}></Route>
     </Switch>

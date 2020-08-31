@@ -1,0 +1,66 @@
+@import "../variables.scss";
+
+.content {
+ &__nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   min-height: 55px;
+   padding: 10px;
+
+  &__tags {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__button {
+      min-width: 30px;
+      height: fit-content;
+      margin: 5px;
+      padding: 5px 11px;
+      border: none;
+      border-radius: 15px;
+      background-color: $background-dark;
+      color: $lightgrey;
+      text-transform: lowercase;
+      font-style: italic;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid $teal-light
+      }
+    }
+  }
+  &__input {
+    width: 40%;
+    text-align: right;
+
+    input {
+      padding: 5px 11px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    button {
+      min-width: 30px;
+      height: fit-content;
+      margin: 5px;
+      padding: 5px 11px;
+      border: none;
+      border-radius: 15px;
+      background-color: $teal-light;
+      color: $background-dark;
+      text-transform: lowercase;
+      font-style: italic;
+      font-size: 16px;
+      cursor: pointer;
+      transition: ease-in-out 0.5s;
+
+      &:hover {
+        background-color: #ffc048;
+      }
+    }
+  }
+ }
+}

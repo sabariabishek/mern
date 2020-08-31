@@ -14,7 +14,10 @@ createProject = (req, res) => {
   const project = new Project(body)
 
   if (!project) {
-      return res.status(400).json({ success: false, error: err })
+      return res.status(400).json({ 
+          success: false, 
+          error: err 
+        })
   }
 
   project
@@ -48,6 +51,20 @@ getProject = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+getDevProject = async (req, res) => {
+    await Project.find({type: 'Dev'}, (err, projects) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err })
+        }
+        if (!projects.length) {
+            return res
+                .status(404)
+                .json({ success: false, error: `Projects not found` })
+        }
+        return res.status(200).json({ success: true, data: projects })
+    }).catch(err => console.log(err))
+}
+
 getInfo = async (req, res) => {
     await Info.find({}, (err, information) => {
         if (err) {
@@ -65,5 +82,6 @@ getInfo = async (req, res) => {
 module.exports = {
     createProject,
     getProject,
+    getDevProject,
     getInfo,
 }

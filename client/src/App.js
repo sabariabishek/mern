@@ -13,6 +13,7 @@ import './App.scss';
 
 const App = () => {
   const [projectData, setProjectData] = React.useState([]);
+  // const [devProjectData, setDevProjectData] = React.useState([]);
   const [aboutInfo, setAboutInfo] = React.useState([]);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [educationData, setEducationData] = React.useState([]);
@@ -21,6 +22,13 @@ const App = () => {
     fetch('/api/data')
     .then(res => res.json())
     .then(data => setProjectData(data))
+    .catch(error => console.log(error))
+  }
+
+  const getDevProjects = () => {
+    fetch('/api/dev')
+    .then(res => res.json())
+    .then(data => setProjectData(data.data))
     .catch(error => console.log(error))
   }
 
@@ -53,7 +61,7 @@ const App = () => {
       <section className="main__section">
         <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
-        <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData}/>
+        <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData} getDevProjects={getDevProjects} getProjects={getProjects}/>
         <Aside aboutInfo={aboutInfo}/>
       </section>
     </main>

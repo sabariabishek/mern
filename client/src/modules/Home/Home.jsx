@@ -2,10 +2,11 @@ import React from 'react';
 
 import './Home.scss';
 import Content from '../../components/Content/Content.jsx';
-
+import Tags from '../../components/Tags/Tags';
 
 const Home = (props) => {
-  const { projectData } = props;
+  const { projectData, getDevProjects, getProjects } = props;
+  console.log('hey', getDevProjects)
   const [modal, setModal] = React.useState(false);
   const [projectIndex, setProjectIndex] = React.useState([]);
   const [clickedProject, setClickedProject] = React.useState('');
@@ -19,8 +20,6 @@ const Home = (props) => {
   const clickCloseModal = () => {
     {modal ? setModal(false) : setModal(true)}
   }
-  console.log(projectIndex)
-  console.log(projectData.length)
 
   const nextProject = () => {
     if (projectIndex === projectData.length - 1) {
@@ -29,7 +28,6 @@ const Home = (props) => {
       setProjectIndex(projectIndex + 1)
       setClickedProject(projectData[projectIndex+1])
     }
-
   }
 
   const previousProject = () => {
@@ -43,6 +41,7 @@ const Home = (props) => {
 
   return (
     <section className="content">
+      <Tags getDevProjects={getDevProjects} getProjects={getProjects}/>
       <Content projectData={projectData} openModal={openModal} clickedProject={clickedProject} clickCloseModal={clickCloseModal} modal={modal} projectIndex={projectIndex} nextProject={nextProject} previousProject={previousProject}/>
     </section>
   );
