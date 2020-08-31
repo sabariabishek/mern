@@ -13,10 +13,10 @@ import './App.scss';
 
 const App = () => {
   const [projectData, setProjectData] = React.useState([]);
-  // const [devProjectData, setDevProjectData] = React.useState([]);
   const [aboutInfo, setAboutInfo] = React.useState([]);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [educationData, setEducationData] = React.useState([]);
+  // const [type, setType] = React.useState({ info: ''});
 
   const getProjects = () => {
     fetch('/api/data')
@@ -50,6 +50,24 @@ const App = () => {
     {!menuOpen ? setMenuOpen(true) : setMenuOpen (false)}
   }
 
+  // const sendType = (e) => {
+  //   fetch('http://localhost:8000/api/type', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(type),
+  //   })
+  //   .then(res => res.json())
+  //   .then(data => setType(data))
+  // }
+
+  // const changeType = (e) => {
+  //   const type = e.target.value;
+  //   setType({info: type})
+  //   sendType()
+  // }
+
   React.useEffect(() => {
     getProjects()
     getInfo()
@@ -59,6 +77,9 @@ const App = () => {
   return (
     <main className="main">
       <section className="main__section">
+      {/* <button onClick={(e) => {
+          changeType(e)
+        }} value="click me">click me</button> */}
         <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
         <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData} getDevProjects={getDevProjects} getProjects={getProjects}/>

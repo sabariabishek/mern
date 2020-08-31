@@ -29,5 +29,9 @@ app.get('/api/data', (req, res) => {
     })
 })
 
+// app.post('/api/type', (req, res) => {
+//     const type = req.body.info;
+//     console.log(type, "blobben")
+// })
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
