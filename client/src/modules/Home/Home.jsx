@@ -5,8 +5,7 @@ import Content from '../../components/Content/Content.jsx';
 import Tags from '../../components/Tags/Tags';
 
 const Home = (props) => {
-  const { projectData, getDevProjects, getProjects } = props;
-  console.log('hey', getDevProjects)
+  const { projectData, getDevProjects, getProjects, changeType } = props;
   const [modal, setModal] = React.useState(false);
   const [projectIndex, setProjectIndex] = React.useState([]);
   const [clickedProject, setClickedProject] = React.useState('');
@@ -41,7 +40,7 @@ const Home = (props) => {
 
   return (
     <section className="content">
-      <Tags getDevProjects={getDevProjects} getProjects={getProjects}/>
+      <Tags getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/>
       <Content projectData={projectData} openModal={openModal} clickedProject={clickedProject} clickCloseModal={clickCloseModal} modal={modal} projectIndex={projectIndex} nextProject={nextProject} previousProject={previousProject}/>
     </section>
   );

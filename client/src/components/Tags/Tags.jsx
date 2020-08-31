@@ -1,8 +1,8 @@
 import React from 'react';
 import './Tags.scss';
 
-function Tags({ getDevProjects, getProjects }) {
-
+function Tags({ getDevProjects, getProjects, changeType }) {
+  console.log(changeType)
   return (
   <section className="content__nav">
     <article className="content__nav__tags">
@@ -10,7 +10,9 @@ function Tags({ getDevProjects, getProjects }) {
               e.preventDefault();
               getProjects();
               }}>All</button>
-      <button className="content__nav__tags__button">Design</button>
+      <button className="content__nav__tags__button" onClick={(e) => {
+          changeType(e)
+        }} value="Design">Design</button>
       <button className="content__nav__tags__button" onClick={(e) => {
               e.preventDefault();
               getDevProjects();

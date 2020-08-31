@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fetch = require('node-fetch');
 
+const Project = require('./model/project-models')
+
+
 const db = require('./db');
 const projectRouter = require('./routes/project-routes.js')
 
@@ -29,9 +32,9 @@ app.get('/api/data', (req, res) => {
     })
 })
 
-// app.post('/api/type', (req, res) => {
-//     const type = req.body.info;
-//     console.log(type, "blobben")
-// })
+app.post('/api/type', (req, res) => {
+    const type = req.body.info;
+    console.log(type, "blobben")
+})
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
