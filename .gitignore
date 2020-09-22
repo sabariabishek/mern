@@ -12,6 +12,7 @@
 /build
 
 /db/development.js
+db/development.js
 
 # misc
 .DS_Store
