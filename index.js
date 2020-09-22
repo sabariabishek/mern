@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path');
+const path = require('path')
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const fetch = require('node-fetch');
@@ -8,7 +8,7 @@ const db = require('./db');
 const projectRouter = require('./routes/project-routes.js')
 
 const app = express();
-const apiPort = 8000;
+const apiPort = process.env.PORT || 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
