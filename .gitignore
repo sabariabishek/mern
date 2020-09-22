@@ -23,6 +23,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-server/db/psw.js
-server/node_modules
