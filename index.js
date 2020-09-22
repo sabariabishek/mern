@@ -25,7 +25,7 @@ app.use(express.static(path.resolve('./client/build')))
 app.use('/api', projectRouter);
 
 app.get('/api/data', (req, res) => {
-    fetch('/api/projects')
+    fetch('https://ninnih-portfolio.herokuapp.com/api/projects')
     .then(res => res.json())
     .then(data => { 
         res.status(200).send(data.data)
