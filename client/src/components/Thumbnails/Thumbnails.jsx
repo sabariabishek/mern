@@ -5,7 +5,7 @@ import './Thumbnails.scss';
 
 const Thumbnails = ({ clickedProject, clickedThumbnail }) => {
   const gallery = clickedProject.gallery;
-
+  console.log(gallery)
   return (
     <section className="modal__gallery__thumbnails">
     {gallery.map((image, index) => {
