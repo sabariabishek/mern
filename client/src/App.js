@@ -51,7 +51,7 @@ const App = () => {
   }
 
   const sendType = (e) => {
-  fetch('http://localhost:8000/api/type', {
+  fetch('/api/type', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
