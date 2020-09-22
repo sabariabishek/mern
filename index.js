@@ -25,7 +25,7 @@ app.use(express.static(path.resolve('./client/build')))
 app.use('/api', projectRouter);
 
 app.get('/api/data', (req, res) => {
-    fetch('http://localhost:8000/api/projects')
+    fetch('/api/projects')
     .then(res => res.json())
     .then(data => { 
         res.status(200).send(data.data)
