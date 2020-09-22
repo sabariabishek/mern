@@ -51,7 +51,7 @@ const App = () => {
   }
 
   const sendType = (e) => {
-    fetch('http://localhost:8000/api/type', {
+  fetch('http://localhost:8000/api/type', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -64,10 +64,12 @@ const App = () => {
 
   const changeType = (e) => {
     const type = e.target.value;
-    console.log(type)
     setType({info: type})
     sendType()
   }
+  console.log(type)
+
+
 
   React.useEffect(() => {
     getProjects()
