@@ -11,7 +11,7 @@
 # production
 /build
 
-/db/dev.js
+/db/development.js
 
 # misc
 .DS_Store
