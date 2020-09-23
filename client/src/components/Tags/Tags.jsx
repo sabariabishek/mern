@@ -2,7 +2,6 @@ import React from 'react';
 import './Tags.scss';
 
 function Tags({ getDevProjects, getProjects, changeType }) {
-  console.log(changeType)
   return (
   <section className="content__nav">
     <article className="content__nav__tags">

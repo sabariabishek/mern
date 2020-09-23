@@ -9,7 +9,6 @@ import AboutContent from '../AboutContent/AboutContent';
 
 const Main = (props) => {
   const { projectData, aboutInfo, educationData, getDevProjects, getProjects, changeType } = props;
-  console.log(educationData)
   return (
     <Switch> 
       <Route exact path='/' render={(props) => <Home {...props} projectData={projectData} getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/>}></Route>

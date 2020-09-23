@@ -75,17 +75,16 @@ const App = () => {
     setType({info: type})
     sendType()
   }
-  console.log(type)
 
-  const filter = () => {
-    console.log("filter", projectData)
-  }
+  // const filter = () => {
+  //   console.log("filter", projectData)
+  // }
 
   React.useEffect(() => {
     getProjects()
     getInfo()
     getEducation()
-    filter()
+    // filter()
   }, [])
 
 

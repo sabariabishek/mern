@@ -24,7 +24,6 @@ const Gallery = ({ clickedProject }) => {
     } else if (imageNumber > 0)
     setImageNumber(imageNumber - 1)
   }
-  console.log(gallery[imageNumber])
 
   const clickedThumbnail = (image) => {
     setImageNumber(image)

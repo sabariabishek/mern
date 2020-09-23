@@ -4,7 +4,6 @@ import {
 } from '../constants/index';
 
 export const loadProjects = payload => {
-  console.log(payload)
   return {
       type: GET_PROJECTS,
       payload
