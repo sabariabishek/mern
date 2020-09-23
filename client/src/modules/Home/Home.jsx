@@ -40,7 +40,7 @@ const Home = (props) => {
 
   return (
     <section className="content">
-      <Tags getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/>
+      {/* <Tags getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/> */}
       <Content projectData={projectData} openModal={openModal} clickedProject={clickedProject} clickCloseModal={clickCloseModal} modal={modal} projectIndex={projectIndex} nextProject={nextProject} previousProject={previousProject}/>
     </section>
   );

@@ -16,11 +16,14 @@ const TopBar = ({openMenu, menuOpen}) => {
         {!menuOpen ? <Menu /> : <Close />}
       </a>
       <h1 className="main__section__name">Ninni H.</h1>
-      <NavLink to="/contact" exact>
+      {/* <NavLink to="/contact" exact>
         <button className="header__button">
           <ContactIcon />
         </button>
-      </NavLink>
+      </NavLink> */}
+      <article className="header__button header__button--construction">
+        <h3 className="header__button__construction">Under construction</h3>
+      </article>
     </section>
   );
 }

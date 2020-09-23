@@ -67,6 +67,10 @@
     border-radius: 25px;
     transition: ease-in-out 0.5s;
     cursor: pointer;
+
+    &--construction {
+      padding: 5px;
+    }
     
     &:hover {
       background-color: $orange-light;

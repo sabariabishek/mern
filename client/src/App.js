@@ -11,12 +11,20 @@ import TopBar from './components/TopBar/TopBar.jsx';
 
 import './App.scss';
 
+import { useDispatch, useSelector } from 'react-redux'
+import { loadProjects, filterProjects } from './js/actions/index';
+
+
 const App = () => {
+
+  const projects = useSelector(state => state);
+	const dispatch = useDispatch();
+
   const [projectData, setProjectData] = React.useState([]);
   const [aboutInfo, setAboutInfo] = React.useState([]);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [educationData, setEducationData] = React.useState([]);
-  const [type, setType] = React.useState({ info: ''});
+  const [type, setType] = React.useState({ info: '' });
 
   const getProjects = () => {
     fetch('/api/data')
@@ -69,20 +77,21 @@ const App = () => {
   }
   console.log(type)
 
-
+  const filter = () => {
+    console.log("filter", projectData)
+  }
 
   React.useEffect(() => {
     getProjects()
     getInfo()
     getEducation()
+    filter()
   }, [])
+
 
   return (
     <main className="main">
       <section className="main__section">
-      <button onClick={(e) => {
-          changeType(e)
-        }} value="click me">click me</button>
         <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
         <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData} getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/>

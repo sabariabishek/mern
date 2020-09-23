@@ -52,7 +52,7 @@ getProject = async (req, res) => {
 }
 
 getDevProject = async (req, res) => {
-    await Project.find({type: 'Dev'}, (err, projects) => {
+    await Project.find({ type: 'Dev' }, (err, projects) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
