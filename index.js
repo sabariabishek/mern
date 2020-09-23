@@ -34,7 +34,6 @@ app.get('/api/data', (req, res) => {
 
 app.post('/api/type', (req, res) => {
     const type = req.body.info;
-		console.log(type, "blobben")
 })
 
 app.get('*', (req, res) => res.sendFile(path.resolve('client/build/index.html')));
