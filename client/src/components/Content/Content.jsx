@@ -12,7 +12,6 @@ function Content({ projectData, projectIndex, openModal, clickCloseModal, clicke
       return project
     }
   })
-  console.log('result:', result)
 
   return (
     <section className="content--home">
