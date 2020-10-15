@@ -2,7 +2,7 @@ import React from 'react';
 import './Tags.scss';
 
 const Tags = ({ getDevProjects, getProjects, changeType }) => {
-  const tagList = ['All', 'design', 'Dev', 'Illustration']
+  const tagList = ['All', 'design', 'Development', 'Illustration']
   
   return (
   <section className="content__nav">
