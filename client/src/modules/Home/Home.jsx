@@ -5,10 +5,14 @@ import Content from '../../components/Content/Content.jsx';
 import Tags from '../../components/Tags/Tags';
 
 const Home = (props) => {
-  const { projectData, getDevProjects, getProjects, changeType } = props;
+  const { projectData, getDevProjects, getProjects } = props;
   const [modal, setModal] = React.useState(false);
   const [projectIndex, setProjectIndex] = React.useState([]);
   const [clickedProject, setClickedProject] = React.useState('');
+  const [type, setType] = React.useState({
+    type: 'All'
+  })
+  console.log(type)
 
   const openModal = (e, index) => {
     {!modal ? setModal(true) : setModal(false)}
@@ -38,10 +42,27 @@ const Home = (props) => {
     }
   }
 
+  const changeType = e => {
+    const type = e.target.id;
+    setType({type: type})
+  }
+
   return (
     <section className="content">
-      {/* <Tags getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/> */}
-      <Content projectData={projectData} openModal={openModal} clickedProject={clickedProject} clickCloseModal={clickCloseModal} modal={modal} projectIndex={projectIndex} nextProject={nextProject} previousProject={previousProject}/>
+      <Tags 
+        getDevProjects={getDevProjects} 
+        getProjects={getProjects} 
+        changeType={changeType}/>
+      <Content 
+        projectData={projectData} 
+        openModal={openModal} 
+        clickedProject={clickedProject} 
+        clickCloseModal={clickCloseModal} 
+        modal={modal} 
+        projectIndex={projectIndex} 
+        nextProject={nextProject} 
+        previousProject={previousProject} 
+        type={type}/>
     </section>
   );
 }

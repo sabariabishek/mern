@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 import './AboutContent.scss';
 import { Github, LinkedIn } from '../../Icons/Icons';
@@ -7,9 +8,12 @@ const AboutContent = ({ aboutInfo, educationData }) => {
   return (
     <section className="content">
       <article className="content__about">
+        <Fade left>
         <section className="content__about__image">
           <img src={process.env.PUBLIC_URL + aboutInfo.image} alt="" className="content__about__image__img"/>
         </section>
+        </Fade>
+        <Fade right>
         <section className="content__about__info">
           <section className="information">
             <article className="information__header">
@@ -48,6 +52,7 @@ const AboutContent = ({ aboutInfo, educationData }) => {
             </section>
           </section>
         </section>
+        </Fade>
       </article>
     </section>
   );

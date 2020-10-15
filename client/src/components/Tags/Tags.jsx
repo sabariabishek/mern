@@ -1,29 +1,26 @@
 import React from 'react';
 import './Tags.scss';
 
-function Tags({ getDevProjects, getProjects, changeType }) {
+const Tags = ({ getDevProjects, getProjects, changeType }) => {
+  const tagList = ['All', 'design', 'Dev', 'Illustration']
+  
   return (
   <section className="content__nav">
     <article className="content__nav__tags">
-      <button className="content__nav__tags__button" onClick={(e) => {
-              e.preventDefault();
-              getProjects();
-              }}>All</button>
-      <button className="content__nav__tags__button" onClick={(e) => {
-          changeType(e)
-        }} value="Design">Design</button>
-      <button className="content__nav__tags__button" onClick={(e) => {
-              e.preventDefault();
-              getDevProjects();
-              }}>Web dev</button>
-      <button className="content__nav__tags__button">Illustration</button>
-      <button className="content__nav__tags__button">WordPress</button>
-      <button className="content__nav__tags__button">React</button>
+      {tagList.map(tag => {
+        return <button 
+        className="content__nav__tags__button"
+        id={tag} 
+        onClick={(e) => {
+            e.preventDefault();
+            changeType(e)
+            }}>{tag} </button>
+       })}
     </article>
-    <article className="content__nav__input">
+    {/* <article className="content__nav__input">
       <input type="text"/>
       <button>search</button>
-    </article>
+    </article> */}
   </section>
   );
 }

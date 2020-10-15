@@ -58,23 +58,23 @@ const App = () => {
     {!menuOpen ? setMenuOpen(true) : setMenuOpen (false)}
   }
 
-  const sendType = (e) => {
-  fetch('/api/type', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(type),
-    })
-    .then(res => res.json())
-    .then(data => setType(data))
-  }
+  // const sendType = (e) => {
+  // fetch('/api/type', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(type),
+  //   })
+  //   .then(res => res.json())
+  //   .then(data => setType(data))
+  // }
 
-  const changeType = (e) => {
-    const type = e.target.value;
-    setType({info: type})
-    sendType()
-  }
+  // const changeType = (e) => {
+  //   const type = e.target.value;
+  //   setType({info: type})
+  //   sendType()
+  // }
 
   // const filter = () => {
   //   console.log("filter", projectData)
@@ -87,13 +87,16 @@ const App = () => {
     // filter()
   }, [])
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  })
 
   return (
     <main className="main">
       <section className="main__section">
         <TopBar openMenu={openMenu} menuOpen={menuOpen}/>
         <Header menuOpen={menuOpen}/>
-        <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData} getDevProjects={getDevProjects} getProjects={getProjects} changeType={changeType}/>
+        <Main projectData={projectData} aboutInfo={aboutInfo} educationData={educationData} getDevProjects={getDevProjects} getProjects={getProjects}/>
         <Aside aboutInfo={aboutInfo}/>
       </section>
     </main>
