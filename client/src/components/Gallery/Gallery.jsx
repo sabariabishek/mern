@@ -40,7 +40,7 @@ const Gallery = ({ clickedProject }) => {
           </a>
         </div>
         <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
-        <div>
+        <div className="modal__gallery__nav">
           <a href="" onClick={(e) => {
                   e.preventDefault();
                   nextImage()

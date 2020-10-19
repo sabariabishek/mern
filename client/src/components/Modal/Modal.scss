@@ -10,7 +10,6 @@
 	width: calc(80% - 10px);
 	height: calc(90vh - 62px);;
 	margin: 5px;
-	padding: 5px;
 	background-color: rgba(245, 245, 245, 0.99);
 	border-radius: 7px;
 	z-index: 50000;
@@ -19,13 +18,16 @@
 
 	@media (min-width: $breakpoint-md) {
 		margin: 5px;
-		padding: 15px;
 	}
 			
 	&__header {
+		background-color: rgba(245, 245, 245, 0.99);
+		position: sticky;
+		top: 0;
+		left: 0;
+		padding: 10px;
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 15px; 
 
 		&__title {
 			display: flex;
@@ -35,6 +37,7 @@
 				letter-spacing: 1.3px;
 				font-weight: 500;
 			}
+
 			&__link {
 				margin-left: 15px;
 				display: flex;
@@ -61,18 +64,36 @@
 	&__content {
 		width: 100%;
 		display: flex;
-		flex-direction: column-reverse;
-
-		@media (min-width: $breakpoint-md) {
-			flex-direction: column;
-		}
+		padding: 30px 5px;
 
 		&__info {
 			width: 100%;
 			padding: 15px;
 
 			@media (min-width: $breakpoint-md) {
-				width: 85%;
+				width: 40%;
+			}
+
+			&__tags {
+				display: flex;
+				flex-wrap: wrap;
+
+				article {
+					height: -moz-fit-content;
+					height: fit-content;
+					margin: 5px;
+					padding: 0px 7px 3px 7px;
+					border-radius: 15px;
+					background-color: #485460;
+					border: 1px solid #485460;
+					color: #d2dae2;
+					text-transform: lowercase;
+					font-style: italic;
+				}
+			}
+
+			h3 {
+				margin-top: 10px;
 			}
 		}
 	}
@@ -90,14 +111,23 @@
 				text-transform: uppercase;
 				color: $teal-darker;
 
+				&:hover {
+					text-decoration: underline;
+				}
+
 				svg {
 					width: 20px;
 					height: auto;
 					margin: 0 10px;
 				}
+
+				&--left {
+					svg {
+						transform: rotate(180deg);
+					}
+				}
 			}
 		}
 	}
-	
 }
 

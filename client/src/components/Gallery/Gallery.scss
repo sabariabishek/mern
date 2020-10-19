@@ -14,7 +14,7 @@
       align-items: center;
 
       &__img {
-        width: calc(100% - 55px);;
+        width: calc(100% - 75px);;
         height: auto;
         max-height: 500px;
         object-fit: contain;
@@ -22,6 +22,8 @@
     }
 
     &__thumbnails {
+      margin-top: 15px;
+      margin-left: 33px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -29,7 +31,7 @@
     }
 
     &__nav {
-
+      margin: 5px;
     }
   }
 }
