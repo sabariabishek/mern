@@ -3,7 +3,7 @@ import React from 'react';
 import './Header.scss';
 import { Link, NavLink } from 'react-router-dom';
 import { HomeIcon, AboutIcon, ContactIcon } from '../../Icons/Icons'
-
+import BrushOutlinedIcon from '@material-ui/icons/BrushOutlined';
 
 const Header = ({ menuOpen }) => {
 
@@ -21,7 +21,7 @@ const Header = ({ menuOpen }) => {
               </article>
             </NavLink>
             <NavLink to="/about" exact>
-            <article className="header__navigation__list__item">
+              <article className="header__navigation__list__item">
                 <AboutIcon />
                 <h2 className="header__navigation__list__item__text">about</h2>
               </article>
