@@ -1,18 +1,23 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 
 import './Home.scss';
 import Content from '../../components/Content/Content.jsx';
 import Tags from '../../components/Tags/Tags';
+import { filterProjects } from '../../js/actions/index';
 
-const Home = (props) => {
-  const { projectData, getDevProjects, getProjects } = props;
+
+const Home = () => {
+  let projectData = useSelector(state => state.projectReducer.results);
+
+  const dispatch = useDispatch();
+
   const [modal, setModal] = React.useState(false);
   const [projectIndex, setProjectIndex] = React.useState([]);
   const [clickedProject, setClickedProject] = React.useState('');
   const [type, setType] = React.useState({
     type: 'All'
   })
-  console.log(type)
 
   const openModal = (e, index) => {
     {!modal ? setModal(true) : setModal(false)}
@@ -44,17 +49,14 @@ const Home = (props) => {
 
   const changeType = e => {
     const type = e.target.id;
-    setType({type: type})
+    dispatch(filterProjects({ type: type }))
   }
 
   return (
     <section className="content">
       <Tags 
-        getDevProjects={getDevProjects} 
-        getProjects={getProjects} 
         changeType={changeType}/>
       <Content 
-        projectData={projectData} 
         openModal={openModal} 
         clickedProject={clickedProject} 
         clickCloseModal={clickCloseModal} 

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const uri = require('./psw.js').mongoURI;
 
 mongoose
-    .connect(uri, { useNewUrlParser: true })
+    .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(e => {
         console.error('Connection error', e.message)
     })

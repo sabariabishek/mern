@@ -1,7 +1,7 @@
 import React from 'react';
 import './Tags.scss';
 
-const Tags = ({ getDevProjects, getProjects, changeType }) => {
+const Tags = ({ changeType }) => {
   const tagList = ['All', 'design', 'Development', 'Illustration']
   
   return (

@@ -9,10 +9,13 @@
   overflow: scroll;
   overflow-x: hidden;
 
-  &--home {
-    position: relative;
+  &__content {
     display: flex;
     flex-wrap: wrap;
+  }
+  
+  &--home {
+    position: relative;
   }
 
   &__divider {
@@ -55,7 +58,6 @@
       left: 10px;
       right: 10px;
       padding: 5px;
-      border-radius: 7px;
       background-color: rgbA(30,39,46,0.95);
       box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
       -webkit-box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
@@ -83,7 +85,7 @@
     }
 
     &__tags {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
 
       &__button {
@@ -100,9 +102,9 @@
         font-style: italic;
         cursor: pointer;
 
-        // &:hover {
-        //   border: 1px solid $lightgrey;
-        // }
+        &:hover {
+          display: flex;
+        }
       }
     }
 

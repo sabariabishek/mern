@@ -4,7 +4,6 @@ import './Gallery.scss';
 import { Left, Right } from '../../Icons/Icons';
 import Thumbnails from '../Thumbnails/Thumbnails';
 
-
 const Gallery = ({ clickedProject }) => {
   const [imageNumber, setImageNumber] = React.useState(0);
   const gallery = clickedProject.gallery;
