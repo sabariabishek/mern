@@ -1,14 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
+
 import Fade from 'react-reveal/Fade';
+import { filterProjects } from '../../js/actions/index';
+
 import './AboutSkills.scss';
 
 const AboutSkills = ({ aboutInfo }) => {
+  const dispatch = useDispatch();
+
   console.log(aboutInfo)
   let loading = true;
   if(aboutInfo.tech === undefined) {
     loading = true;
   } else {
     loading = false;
+  }
+
+  const changeType = e => {
+    const type = e.target.value;
+    dispatch(filterProjects({ type: type }))
   }
 
   return (
@@ -18,7 +30,7 @@ const AboutSkills = ({ aboutInfo }) => {
         :
         <section className="skills__wrapper"> 
           <section className="skill">
-            <h2>DEV</h2>
+            <h2>DEVELOPMENT</h2>
             <article className="skill__content">
             {
               aboutInfo.tech.map(tech => {
@@ -30,10 +42,18 @@ const AboutSkills = ({ aboutInfo }) => {
                 }
               })
             }
-              <button>View web development projects</button>
+              <article className="skill__button__wrapper">
+                <Link to="/">
+                  <button 
+                    className="skill__button" 
+                    value="Development"
+                    onClick={changeType}>View web projects
+                  </button>
+                </Link>
+              </article>
             </article>
           </section>
-          <section className="skill">
+          <section className="skill skill--design">
             <h2>DESIGN</h2>
             <article className="skill__content">
             {
@@ -47,7 +67,15 @@ const AboutSkills = ({ aboutInfo }) => {
               })
             }
             </article>
-            <button>View design projects</button>
+            <article className="skill__button__wrapper">
+              <Link to="/">
+                <button 
+                  className="skill__button" 
+                  value="design"
+                  onClick={changeType}>View design projects
+                </button>
+              </Link>
+            </article>
           </section>
         </section>
         } 
