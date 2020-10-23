@@ -1,35 +1,49 @@
 @import "../variables.scss";
 .skills {
   &__wrapper {
-    background-color: white;
+    background-color: rgba(255,255,255,0.7);
+    width: 100%;
   }
 }
 
 .skill {
   width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: white;
+
+  &__content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &__item {
+      margin: 30px 20px;
+      max-height: 100px;
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__image {
+        width: auto;
+        max-width: 100px;
+        max-height: 80px;
+        margin-bottom: 20px;
+      }
+    }
+  }
 
   h2 {
     width: 100%;
-    padding: 5px;
+    padding: 10px 0;
+    margin-bottom: 30px;
     background-color: #485460;
     color: white;
     text-align: center;
-  }
-
-  &__item {
-    margin: 10px;
-    max-height: 100px;
-    width: 150px;
-
-    &__image {
-      width: auto;
-      max-width: 100px;
-      max-height: 80px;
-    }
   }
 }

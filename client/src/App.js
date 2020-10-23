@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Router, Route, Switch } from "react-router";
+import { useDispatch, useSelector } from 'react-redux'
+import { loadProjects, filterProjects } from './js/actions/index';
 
 import { Link, NavLink } from 'react-router-dom';
 import { HomeIcon, AboutIcon, ContactIcon, Menu, Close } from './Icons/Icons'
@@ -11,16 +13,12 @@ import TopBar from './components/TopBar/TopBar.jsx';
 
 import './App.scss';
 
-import { useDispatch, useSelector } from 'react-redux'
-import { loadProjects, filterProjects } from './js/actions/index';
-
-
 const App = () => {
   const dispatch = useDispatch();
 
-  const [aboutInfo, setAboutInfo] = React.useState([]);
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const [educationData, setEducationData] = React.useState([]);
+  const [aboutInfo, setAboutInfo] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [educationData, setEducationData] = useState([]);
 
   const getProjects = () => {
     fetch('/api/data')
@@ -47,15 +45,15 @@ const App = () => {
     {!menuOpen ? setMenuOpen(true) : setMenuOpen (false)}
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     getProjects()
     getInfo()
     getEducation()
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0)
-  })
+  }, [])
 
   return (
     <main className="main">

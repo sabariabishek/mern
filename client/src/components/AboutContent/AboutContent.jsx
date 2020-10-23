@@ -2,7 +2,6 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import './AboutContent.scss';
-import { Github, LinkedIn } from '../../Icons/Icons';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import AboutTimeline from './AboutTimeline';
@@ -22,6 +21,7 @@ const AboutContent = ({ aboutInfo, educationData }) => {
           <section className="content__about__wrapper">
             <article className="content__about__header">
               <h1>Hello, my name is Ninni Hagström</h1>
+              <p>{aboutInfo.about}</p>
             </article>
             <article className="content__about__info">
               <article><h3>location:</h3><p>{aboutInfo.city}</p></article>

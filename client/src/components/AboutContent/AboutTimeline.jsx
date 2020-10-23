@@ -10,6 +10,8 @@ import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import './AboutTimeline.scss';
 import SchoolIcon from '@material-ui/icons/School';
 import BrushIcon from '@material-ui/icons/Brush';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 
 const AboutTimeline = ({ aboutInfo, educationData }) => {
@@ -20,42 +22,56 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
   } else {
     loading = false;
   }
-
+  console.log(aboutInfo.education)
   return (
       <section className="content__about">
         {loading ? 
           <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         :
         <section className="timeline__wrapper"> 
-          <h2>Timeline</h2>
-          <React.Fragment>
-            <Timeline align="alternate">
-              {aboutInfo.education.map(school => {
-                return (
-                  <Fade up>
-                  <TimelineItem>
-                      <TimelineOppositeContent>
-                        <article>
-                          <h3>{school.year}</h3>
-                          <h3>{school.program}</h3>
-                          <h3>{school.school}</h3>
-                        </article>
-                      </TimelineOppositeContent>
-                  <TimelineSeparator>
-                    <TimelineDot>
-                      <SchoolIcon/>
-                    </TimelineDot>
-                    <TimelineConnector/>
-                  </TimelineSeparator>
-                    <TimelineContent>
-                      <img src={process.env.PUBLIC_URL + school.image} alt="" className="timeline__image"/>
-                    </TimelineContent>
-                </TimelineItem>
-                </Fade>
-                )
-              })}
-            </Timeline>
-          </React.Fragment>
+          <article className="timeline__content">
+            <VerticalTimeline>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                date={`${aboutInfo.education[0].year} - present`}
+                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                icon={<SchoolIcon />}
+              >
+                <h3 className="vertical-timeline-element-title">{aboutInfo.education[0].program}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[0].school}, {aboutInfo.education[0].city}</h4>
+                <p>
+                  {aboutInfo.education[0].description}
+                </p>
+              </VerticalTimelineElement>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                date={aboutInfo.education[1].year}
+                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                icon={<SchoolIcon />}
+              >
+                <h3 className="vertical-timeline-element-title">{aboutInfo.education[1].program}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[1].school}, {aboutInfo.education[1].city}</h4>
+                <p>
+                  {aboutInfo.education[1].description}<br/><br/>
+                  <b>Graduated with: {aboutInfo.education[1].grade}</b>
+                </p>
+              </VerticalTimelineElement>
+              <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                date={aboutInfo.education[2].year}
+                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                icon={<SchoolIcon />}
+              >
+                <h3 className="vertical-timeline-element-title">{aboutInfo.education[2].program}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[2].school}, {aboutInfo.education[2].city}</h4>
+                <p>
+                  {aboutInfo.education[2].description}
+                </p>
+              </VerticalTimelineElement>
+            </VerticalTimeline>
+          </article>
         </section>
         } 
       </section>
