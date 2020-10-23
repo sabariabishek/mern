@@ -6,6 +6,8 @@ import { Github, LinkedIn } from '../../Icons/Icons';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import AboutTimeline from './AboutTimeline';
+import AboutSkills from './AboutSkills';
+
 
 const AboutContent = ({ aboutInfo, educationData }) => {
   return (
@@ -45,7 +47,7 @@ const AboutContent = ({ aboutInfo, educationData }) => {
           </section>
         </Fade>
       </section>
-
+    <AboutSkills aboutInfo={aboutInfo}/>
     <AboutTimeline aboutInfo={aboutInfo}/>
     </section>
   );

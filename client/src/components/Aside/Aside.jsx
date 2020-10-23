@@ -10,7 +10,7 @@ const Aside = ({ aboutInfo }) => {
         <Fade right>
           <p className="sidebar__description__p">{aboutInfo.about}</p>
         </Fade>
-        <Fade up>
+        <Fade right>
         <p className="sidebar__description__p sidebar__description__p--salt">{aboutInfo.salt}</p>
 
         </Fade>

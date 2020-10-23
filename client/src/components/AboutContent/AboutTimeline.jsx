@@ -7,7 +7,6 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import Typography from '@material-ui/core/Typography';
 import './AboutTimeline.scss';
 import SchoolIcon from '@material-ui/icons/School';
 import BrushIcon from '@material-ui/icons/Brush';
@@ -26,36 +25,39 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
       <section className="content__about">
         {loading ? 
           <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        : 
-        <React.Fragment>
-        <Timeline align="alternate">
-          {aboutInfo.education.map(school => {
-            return (
-              <TimelineItem>
-              <TimelineOppositeContent>
-                <article>
-                  <h3>{school.year}</h3>
-                  <h3>{school.school}</h3>
-                  <h3>{school.program}</h3>
-                </article>
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot>
-                  <SchoolIcon/>
-                </TimelineDot>
-                <TimelineConnector/>
-              </TimelineSeparator>
-              <TimelineContent>
-                <img src={process.env.PUBLIC_URL + school.image} alt=""/>
-              </TimelineContent>
-            </TimelineItem>
-            )
-          })}
-
-        </Timeline>
-      </React.Fragment>
-        }
-      
+        :
+        <section className="timeline__wrapper"> 
+          <h2>Timeline</h2>
+          <React.Fragment>
+            <Timeline align="alternate">
+              {aboutInfo.education.map(school => {
+                return (
+                  <Fade up>
+                  <TimelineItem>
+                      <TimelineOppositeContent>
+                        <article>
+                          <h3>{school.year}</h3>
+                          <h3>{school.program}</h3>
+                          <h3>{school.school}</h3>
+                        </article>
+                      </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot>
+                      <SchoolIcon/>
+                    </TimelineDot>
+                    <TimelineConnector/>
+                  </TimelineSeparator>
+                    <TimelineContent>
+                      <img src={process.env.PUBLIC_URL + school.image} alt="" className="timeline__image"/>
+                    </TimelineContent>
+                </TimelineItem>
+                </Fade>
+                )
+              })}
+            </Timeline>
+          </React.Fragment>
+        </section>
+        } 
       </section>
   );
 }

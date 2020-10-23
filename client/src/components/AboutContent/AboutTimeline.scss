@@ -1,0 +1,24 @@
+@import "../variables.scss";
+
+.timeline {
+  &__image {
+    width: 200px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    h2 {
+      width: 70%;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: #485460;
+      color: white;
+      text-align: center;
+    }
+  }
+}
