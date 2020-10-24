@@ -1,18 +1,55 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { Slide } from 'react-slideshow-image';
 
+import 'react-slideshow-image/dist/styles.css'
 import './Aside.scss';
+
+import ImageOne from '../../assets/images/art/raspberry.jpg'
+import ImageTwo from '../../assets/images/design/final-project-00.jpg'
+import ImageThree from '../../assets/images/development/creu-04.jpg'
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
+
+const slideImages = [
+  ImageOne,
+  ImageTwo,
+  ImageThree
+];
 
 const Aside = ({ aboutInfo }) => {
   return (
     <aside className="sidebar">
       <section className="sidebar__description">
         <Fade right>
-          <p className="sidebar__description__p">{aboutInfo.about}</p>
+          <section className="slider">
+            <Slide easing="ease">
+              <article className="each-slide">
+                <article style={{'backgroundImage': `url(${slideImages[0]})`}}>
+                </article>
+              </article>
+              <article className="each-slide">
+                <article style={{'backgroundImage': `url(${slideImages[1]})`}}>
+                </article>
+              </article>
+              <article className="each-slide">
+                <article style={{'backgroundImage': `url(${slideImages[2]})`}}>
+                </article>
+              </article>
+            </Slide>
+            <section className="slider__overlay">
+              <h1 className="slider__header">Full-stack JavaScript Developer, designer and illustrator</h1>
+            </section>
+        </section>
         </Fade>
         <Fade right>
-        <p className="sidebar__description__p sidebar__description__p--salt">{aboutInfo.salt}</p>
-
+          <section className="sidebar__description">
+            <p className="sidebar__description__p sidebar__description__p--salt">{aboutInfo.salt}</p>
+            <article className="sidebar__links">
+              <LinkedInIcon />
+              <GitHubIcon />
+            </article>
+          </section>
         </Fade>
       </section>
     </aside>
