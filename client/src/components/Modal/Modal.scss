@@ -3,12 +3,12 @@
 .modal {
 	position: fixed;
 	top: 50%;
-	left: 50%;
+	left: 48%;
 	-webkit-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-	width: calc(80% - 10px);
-	height: calc(90vh - 62px);;
+	width: calc(95% - 10px);
+	height: calc(93vh - 62px);
 	margin: 5px;
 	background-color: rgba(245, 245, 245, 0.99);
 	border-radius: 7px;
@@ -17,7 +17,9 @@
   overflow-x: hidden;
 
 	@media (min-width: $breakpoint-md) {
-		margin: 5px;
+		left: 50%;
+		width: calc(80% - 10px);
+		height: calc(90vh - 62px);
 	}
 			
 	&__header {
@@ -65,6 +67,11 @@
 		width: 100%;
 		display: flex;
 		padding: 30px 5px;
+		flex-direction: column;
+
+		@media (min-width: $breakpoint-md) {
+			flex-direction: row;
+		}
 
 		&__info {
 			width: 100%;

@@ -7,8 +7,6 @@ import { Close, Github, WebLink } from '../../Icons/Icons';
 
 
 const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, projectData }) => {
-  console.log(clickedProject)
-  console.log(projectData)
 
   return (
     <section className="modal">

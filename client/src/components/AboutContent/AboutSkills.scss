@@ -7,10 +7,14 @@
 }
 
 .skill {
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   margin: 30px auto;
   background-color: white;
+
+  @media (min-width: $breakpoint-md) {
+    width: 80%;
+  }
 
   &__content {
     width: 90%;
@@ -23,17 +27,25 @@
     &__item {
       margin: 30px 20px;
       max-height: 100px;
-      width: 150px;
+      width: calc(50% - 40px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
+      @media (min-width: $breakpoint-md) {
+        width: 150px;
+      }
+
       &__image {
         width: auto;
-        max-width: 100px;
+        max-width: 50px;
         max-height: 80px;
         margin-bottom: 20px;
+
+        @media (min-width: $breakpoint-md) {
+          max-width: 100px;
+        }
       }
     }
   }
