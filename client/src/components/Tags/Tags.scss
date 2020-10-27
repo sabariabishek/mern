@@ -33,7 +33,11 @@
       cursor: pointer;
 
       &:hover {
-        border: 1px solid $teal-light
+        border: 1px solid $teal-light;
+      }
+
+      &--active {
+        border: 1px solid $teal-dark;
       }
     }
   }

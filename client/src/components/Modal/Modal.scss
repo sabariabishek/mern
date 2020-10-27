@@ -9,12 +9,15 @@
 	transform: translate(-50%, -50%);
 	width: calc(95% - 10px);
 	height: calc(93vh - 62px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	margin: 5px;
 	background-color: rgba(245, 245, 245, 0.99);
 	border-radius: 7px;
 	z-index: 50000;
 	overflow: scroll;
-  overflow-x: hidden;
+	overflow-x: hidden;
 
 	@media (min-width: $breakpoint-md) {
 		left: 50%;

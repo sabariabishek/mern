@@ -16,7 +16,7 @@ const Home = () => {
   const [projectIndex, setProjectIndex] = React.useState([]);
   const [clickedProject, setClickedProject] = React.useState('');
   const [type, setType] = React.useState({
-    type: 'All'
+    type: 'favourite'
   })
 
   const openModal = (e, index) => {
@@ -50,12 +50,14 @@ const Home = () => {
   const changeType = e => {
     const type = e.target.id;
     dispatch(filterProjects({ type: type }))
+    setType({ type: type})
   }
 
   return (
     <section className="content">
       <Tags 
-        changeType={changeType}/>
+        changeType={changeType}
+        type={type}/>
       <Content 
         openModal={openModal} 
         clickedProject={clickedProject} 
@@ -64,7 +66,7 @@ const Home = () => {
         projectIndex={projectIndex} 
         nextProject={nextProject} 
         previousProject={previousProject} 
-        type={type}/>
+        />
     </section>
   );
 }

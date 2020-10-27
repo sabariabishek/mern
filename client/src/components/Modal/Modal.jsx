@@ -27,6 +27,19 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, 
           </a>
         </div>
       </section>
+      <section className="modal__content">
+        <Gallery clickedProject={clickedProject} />
+        <article className="modal__content__info">
+          <section className="modal__content__info__tags">
+            {clickedProject.tags.map(tag => {
+              return(<article>{tag}</article>)
+            })}
+          </section>
+          <h3>Year:</h3><p>{clickedProject.year}</p>
+          <h3>Description:</h3><p>{clickedProject.description}</p>
+          {clickedProject.tools ? <><h3>Tools:</h3><p>{clickedProject.tools}</p></> : null}
+        </article>
+      </section>
       <section className="modal__controls">
         <article className="modal__controls__control">
           <a href="" onClick={(e) => {
@@ -39,19 +52,6 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, 
                 e.preventDefault();
                 nextProject()
                 }}><h3 className="modal__controls__control__item">Next project<ArrowRightAltIcon/></h3></a>
-        </article>
-      </section>
-      <section className="modal__content">
-        <Gallery clickedProject={clickedProject} />
-        <article className="modal__content__info">
-          <section className="modal__content__info__tags">
-            {clickedProject.tags.map(tag => {
-              return(<article>{tag}</article>)
-            })}
-          </section>
-          <h3>Year:</h3><p>{clickedProject.year}</p>
-          <h3>Description:</h3><p>{clickedProject.description}</p>
-          {clickedProject.tools ? <><h3>Tools:</h3><p>{clickedProject.tools}</p></> : null}
         </article>
       </section>
     </section>

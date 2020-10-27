@@ -4,11 +4,14 @@ import Fade from 'react-reveal/Fade';
 import './Content.scss';
 import { useDispatch, useSelector } from 'react-redux'
 
+import BrushIcon from '@material-ui/icons/Brush';
+import FormatShapesIcon from '@material-ui/icons/FormatShapes';
+import CodeIcon from '@material-ui/icons/Code';
+import StarIcon from '@material-ui/icons/Star';
+import { Tooltip } from '@material-ui/core';
 
 function Content({ projectIndex, openModal, clickCloseModal, clickedProject, modal, nextProject, previousProject, type }) {
   let projectData = useSelector(state => state.projectReducer.results);
-  console.log(projectData)
-
   let loading = false;
 
   if(projectData === undefined) {
@@ -36,6 +39,34 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
                   <div className="content__item__header">
                     <div className="content__item__header__title">
                       <h2 className="content__item__header__title__text">{item.projectName}</h2>
+                      <article className="content__item__header__title__type">
+                        {item.type === 'Development' ? 
+                        <Tooltip 
+                          title="Development" 
+                          placement="left">
+                          <CodeIcon/>
+                        </Tooltip> 
+                        : item.type === 'design' ? 
+                        <Tooltip
+                          title="Design" 
+                          placement="left">
+                          <FormatShapesIcon/> 
+                        </Tooltip>
+                        : item.type === 'illustration' ? 
+                        <Tooltip                          
+                          title="Illustration" 
+                          placement="left">
+                          <BrushIcon /> 
+                        </Tooltip>
+                        : null}
+                        {item.favourite ? 
+                          <Tooltip 
+                          title="Favourite" 
+                          placement="top">
+                            <StarIcon/>
+                          </Tooltip> 
+                          : null}
+                      </article>
                     </div>
                     <Fade down>
                       <div className="content__item__tags">
