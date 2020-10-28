@@ -10,6 +10,7 @@ import ImageTwo from '../../assets/images/design/final-project-00.jpg'
 import ImageThree from '../../assets/images/development/creu-04.jpg'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import { Link } from 'react-router-dom';
 
 const slideImages = [
   ImageOne,
@@ -39,10 +40,14 @@ const Aside = ({ aboutInfo }) => {
             </Slide>
             <section className="slider__overlay">
               <h1 className="slider__header">I am a Full-stack JavaScript Developer, Designer and Illustrator</h1>
-              {/* <article>
-                <button>View Profile</button>
-                <button>View Projects</button>
-              </article> */}
+              <article>
+                <Link to="/about">
+                  <button>View Profile</button>
+                </Link>
+                <Link to="/">
+                  <button>View Projects</button>
+                </Link>
+              </article>
             </section>
         </section>
         </Fade>
