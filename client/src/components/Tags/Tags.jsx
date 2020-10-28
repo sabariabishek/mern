@@ -25,10 +25,6 @@ const Tags = ({ changeType, type }) => {
             }}>{tag} </article>
        })}
     </article>
-    {/* <article className="content__nav__input">
-      <input type="text"/>
-      <button>search</button>
-    </article> */}
   </section>
   );
 }

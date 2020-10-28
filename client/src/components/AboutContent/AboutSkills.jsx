@@ -54,6 +54,7 @@ const AboutSkills = ({ aboutInfo }) => {
             </article>
           </section>
           <section className="skill skill--design">
+            <span id="design"></span>
             <h2>DESIGN</h2>
             <article className="skill__content">
             {

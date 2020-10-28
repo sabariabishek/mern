@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createRef } from 'react';
 import Modal from '../Modal/Modal';
 import Fade from 'react-reveal/Fade';
 import './Content.scss';
@@ -8,6 +8,10 @@ import BrushIcon from '@material-ui/icons/Brush';
 import FormatShapesIcon from '@material-ui/icons/FormatShapes';
 import CodeIcon from '@material-ui/icons/Code';
 import StarIcon from '@material-ui/icons/Star';
+import { Pagination } from "@material-ui/lab";
+import usePagination from "./Pagination";
+
+
 import { Tooltip } from '@material-ui/core';
 
 function Content({ projectIndex, openModal, clickCloseModal, clickedProject, modal, nextProject, previousProject, type }) {
@@ -21,13 +25,38 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
     loading = false
   }
 
+  let [page, setPage] = useState(1);
+  const PER_PAGE = 9;
+
+  const count = Math.ceil(projectData.length / PER_PAGE);
+  const _DATA = usePagination(projectData, PER_PAGE);
+
+  const handleChange = (e, page) => {
+    setPage(page);
+    _DATA.jump(page);
+  };
+
   return (
     <section className="content--home">
       { loading ? 
           <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         :
           <section className="content__content">
-          {projectData.map((item, index) => {
+          <article className="content__pagination">
+            <article></article>
+            <article>
+            <Pagination
+                count={count}
+                size="small"
+                page={page}
+                variant="outlined"
+                shape="rounded"
+                onChange={handleChange}
+              />
+            </article>
+            <article>Total projects showing: {projectData.length}</article>
+          </article>
+          {_DATA.currentData().map((item, index) => {
             return (
               <Fade up>
                 <article key={index} className={`content__item content__item--${item.id}`} 
@@ -87,11 +116,28 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
               </Fade>
             );
           })} 
-          {modal ? <Modal projectData={projectData} clickedProject={clickedProject} clickCloseModal={clickCloseModal} projectIndex={projectIndex} nextProject={nextProject} previousProject={previousProject}/> : null }
+          {modal ? 
+          <Modal 
+            projectData={projectData} 
+            clickedProject={clickedProject} 
+            clickCloseModal={clickCloseModal} 
+            projectIndex={projectIndex} 
+            nextProject={nextProject} 
+            previousProject={previousProject}/> 
+          : null }
+          <article className="content__pagination">
+            <Pagination
+                count={count}
+                size="small"
+                page={page}
+                variant="outlined"
+                shape="rounded"
+                onChange={handleChange}
+              />
+          </article>
         </section>
     }
-      
-     
+    
     </section>
   );
 }

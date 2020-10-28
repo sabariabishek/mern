@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import './Home.scss';
 import Content from '../../components/Content/Content.jsx';
 import Tags from '../../components/Tags/Tags';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+
 import { filterProjects } from '../../js/actions/index';
 
 
@@ -53,8 +55,30 @@ const Home = () => {
     setType({ type: type})
   }
 
+  const ref = createRef();
+  const [scroll, setScroll] = useState(true)
+
+  useEffect(() => {
+    const scrolledContent = document.getElementById('home');
+
+    scrolledContent.addEventListener("scroll", () => {
+      const scrollCheck = scrolledContent.scrollTop < 100
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck)
+      }
+    })
+  })
+
+  const handleScroll = () => {
+    ref.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+
   return (
-    <section className="content">
+    <section className="content" id="home">
+      <span ref={ref}></span>
       <Tags 
         changeType={changeType}
         type={type}/>
@@ -67,6 +91,16 @@ const Home = () => {
         nextProject={nextProject} 
         previousProject={previousProject} 
         />
+        {!scroll ? 
+      <article
+        className="scroll"
+        id="scrollbutton" 
+        onClick={handleScroll}>
+          <ArrowUpwardIcon/>
+      </article> 
+      : null
+    }  
+     
     </section>
   );
 }

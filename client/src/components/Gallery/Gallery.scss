@@ -22,12 +22,13 @@
     }
 
     &__thumbnails {
+      height: 100px;
       margin-top: 15px;
-      margin-left: 33px;
+      margin-left: 50px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: flex-start;    
+      justify-content: center;    
     }
 
     &__nav {

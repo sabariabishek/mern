@@ -1,7 +1,5 @@
 import React from 'react';
-
 import './Thumbnails.scss';
-
 
 const Thumbnails = ({ clickedProject, clickedThumbnail }) => {
   const gallery = clickedProject.gallery;

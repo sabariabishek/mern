@@ -39,6 +39,10 @@ const Aside = ({ aboutInfo }) => {
             </Slide>
             <section className="slider__overlay">
               <h1 className="slider__header">I am a Full-stack JavaScript Developer, Designer and Illustrator</h1>
+              {/* <article>
+                <button>View Profile</button>
+                <button>View Projects</button>
+              </article> */}
             </section>
         </section>
         </Fade>
