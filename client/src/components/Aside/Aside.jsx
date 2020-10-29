@@ -5,7 +5,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import './Aside.scss';
 
-import ImageOne from '../../assets/images/art/raspberry.jpg'
+import ImageOne from '../../assets/images/art/main.jpg'
 import ImageTwo from '../../assets/images/design/final-project-00.jpg'
 import ImageThree from '../../assets/images/development/creu-04.jpg'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
