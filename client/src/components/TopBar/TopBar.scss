@@ -6,13 +6,9 @@
   
   &__section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     min-height: 100vh;
-
-    @media (min-width: $breakpoint-md) {
-      flex-direction: row;
-    }
 
     &__topbar {
       width: 100%;

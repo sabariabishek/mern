@@ -6,6 +6,7 @@
 	&__wrapper {
 		width: 100%;
 		margin: 0 auto;
+		margin-bottom: 50px;
 		background-color: rgba(255,255,255, 0.7);
 	}
 	&__content {
@@ -18,9 +19,14 @@
 		background-color: white;
 
 		&__item {
-			width: calc(25% - 20px);
+			width: calc(50% - 20px);
 			margin: 10px;
-			height: 30vh;
+			height: 15vh;
+
+			@media (min-width: $breakpoint-md) {
+				width: calc(25% - 20px);
+				height: 25vh;
+      }
 	
 			img {
 				width: 100%;

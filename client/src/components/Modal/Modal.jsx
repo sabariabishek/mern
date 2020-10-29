@@ -3,12 +3,12 @@ import React from 'react';
 import './Modal.scss';
 import Gallery from '../Gallery/Gallery';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-import { Close, Github, WebLink } from '../../Icons/Icons';
+import CancelIcon from '@material-ui/icons/Cancel';
+import { Github, WebLink } from '../../Icons/Icons';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
-
-const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, projectData }) => {
-  console.log(clickedProject)
-  console.log(projectData)
+const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }) => {
 
   return (
     <section className="modal">
@@ -16,8 +16,8 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, 
         <article className="modal__header__title">
           <h2 className="modal__header__title__text">{clickedProject.projectName}</h2>
           <article className="modal__header__title__link">
-            {clickedProject.github ? <a href={clickedProject.github} target="_blank"><Github/></a> : null}
-            {clickedProject.link ? <a href={clickedProject.link} target="_blank"><WebLink/></a> : null}
+            {clickedProject.github ? <a href={clickedProject.github} target="_blank"><GitHubIcon/></a> : null}
+            {clickedProject.link ? <a href={clickedProject.link} target="_blank"><LinkedInIcon/></a> : null}
           </article>
         </article>
         <div className="modal__header__button">
@@ -25,9 +25,22 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, 
               e.preventDefault();
               clickCloseModal(e.currentTarget)
               }} className="modal__header__close">
-            <Close />
+            <CancelIcon />
           </a>
         </div>
+      </section>
+      <section className="modal__content">
+        <Gallery clickedProject={clickedProject} />
+        <article className="modal__content__info">
+          <section className="modal__content__info__tags">
+            {clickedProject.tags.map(tag => {
+              return(<article>{tag}</article>)
+            })}
+          </section>
+          <h3>Year:</h3><p>{clickedProject.year}</p>
+          <h3>Description:</h3><p>{clickedProject.description}</p>
+          {clickedProject.tools ? <><h3>Tools:</h3><p>{clickedProject.tools}</p></> : null}
+        </article>
       </section>
       <section className="modal__controls">
         <article className="modal__controls__control">
@@ -41,19 +54,6 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject, 
                 e.preventDefault();
                 nextProject()
                 }}><h3 className="modal__controls__control__item">Next project<ArrowRightAltIcon/></h3></a>
-        </article>
-      </section>
-      <section className="modal__content">
-        <Gallery clickedProject={clickedProject} />
-        <article className="modal__content__info">
-          <section className="modal__content__info__tags">
-            {clickedProject.tags.map(tag => {
-              return(<article>{tag}</article>)
-            })}
-          </section>
-          <h3>Year:</h3><p>{clickedProject.year}</p>
-          <h3>Description:</h3><p>{clickedProject.description}</p>
-          {clickedProject.tools ? <><h3>Tools:</h3><p>{clickedProject.tools}</p></> : null}
         </article>
       </section>
     </section>

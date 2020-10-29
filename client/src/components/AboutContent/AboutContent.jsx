@@ -1,21 +1,57 @@
-import React from 'react';
+import React, { useRef, useEffect, useState, createRef } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import './AboutContent.scss';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import AboutTimeline from './AboutTimeline';
 import AboutSkills from './AboutSkills';
 import AboutArt from './AboutArt';
 
 
 const AboutContent = ({ aboutInfo, educationData }) => {
+  const ref = createRef();
+  const [scroll, setScroll] = useState(true)
+
+  useEffect(() => {
+    const scrolledContent = document.getElementById('test');
+
+    scrolledContent.addEventListener("scroll", () => {
+      const scrollCheck = scrolledContent.scrollTop < 400
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck)
+      }
+    })
+  })
+
+  const handleScroll = () => {
+    ref.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+    });
+  });
+
   return (
-    <section className="content">
+    <section className="content" id="test">
       <section className="content__about">
+        <span ref={ref}></span>
         <section className="content__about__image">
           <Fade left>
-            <img src={process.env.PUBLIC_URL + aboutInfo.image} alt="" className="content__about__image__img"/>
+            <img 
+            src={process.env.PUBLIC_URL + aboutInfo.image} 
+            alt="" 
+            className="content__about__image__img"/>
           </Fade>
         </section>
         <Fade right>
@@ -45,12 +81,31 @@ const AboutContent = ({ aboutInfo, educationData }) => {
                 </ul>
               </article>
             </article>
+            <article className="information__navigation">
+                <a href="#development"><button>Development</button></a>
+                <a href="#design"><button>Design</button></a>
+                <a href="#timeline"><button>Education</button></a>
+                <a href="#illustration"><button>Illustration</button></a>
+              </article>
           </section>
         </Fade>
       </section>
+    <span id="development"></span>
     <AboutSkills aboutInfo={aboutInfo}/>
+    <span id="timeline"></span>
     <AboutTimeline aboutInfo={aboutInfo}/>
+    <span id="illustration"></span>
     <AboutArt />
+    {!scroll ? 
+      <article
+        className="scroll"
+        id="scrollbutton" 
+        onClick={handleScroll}>
+          <ArrowUpwardIcon/>
+      </article> 
+      : null
+    }
+
     </section>
   );
 }

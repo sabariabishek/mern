@@ -10,7 +10,6 @@ import './AboutSkills.scss';
 const AboutSkills = ({ aboutInfo }) => {
   const dispatch = useDispatch();
 
-  console.log(aboutInfo)
   let loading = true;
   if(aboutInfo.tech === undefined) {
     loading = true;
@@ -54,6 +53,7 @@ const AboutSkills = ({ aboutInfo }) => {
             </article>
           </section>
           <section className="skill skill--design">
+            <span id="design"></span>
             <h2>DESIGN</h2>
             <article className="skill__content">
             {

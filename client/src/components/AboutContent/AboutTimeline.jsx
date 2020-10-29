@@ -16,13 +16,11 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const AboutTimeline = ({ aboutInfo, educationData }) => {
   let loading = true;
-  console.log(aboutInfo)
   if(aboutInfo.education === undefined) {
     loading = true;
   } else {
     loading = false;
   }
-  console.log(aboutInfo.education)
   return (
       <section className="content__about">
         {loading ? 
