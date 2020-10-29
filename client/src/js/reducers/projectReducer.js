@@ -29,7 +29,6 @@ const payload = action.payload;
         } else if(project.type === payload.type){
           return project
         } else if(payload.type === "favourite" && project.favourite || payload.type === '' && project.favourite){
-          console.log(project)
           return project
         }
       })

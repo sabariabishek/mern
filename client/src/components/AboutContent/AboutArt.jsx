@@ -54,7 +54,7 @@ const AboutArt = () => {
 						<Link to="/">
 							<button 
 								className="skill__button skill__button--art" 
-								value="illustration"
+								value="Illustration"
 								onClick={changeType}>View illustration projects
 							</button>
 						</Link>

@@ -9,7 +9,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }) => {
-
   return (
     <section className="modal">
       <section className="modal__header">

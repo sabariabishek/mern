@@ -65,7 +65,7 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
                 <article key={index} className={`content__item content__item--${item.id}`} 
                 onClick={(e) => {
                   e.preventDefault();
-                  openModal(e.currentTarget, index)
+                  openModal(e.currentTarget, projectData.indexOf(item))
                   }}>
                   <div className="content__item__hover"></div>
                   <div className="content__item__header">
