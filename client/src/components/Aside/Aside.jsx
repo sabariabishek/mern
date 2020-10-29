@@ -42,7 +42,7 @@ const Aside = ({ aboutInfo }) => {
               <h1 className="slider__header">I am a Full-stack JavaScript Developer, Designer and Illustrator</h1>
               <article>
                 <Link to="/about">
-                  <button>View Profile</button>
+                  <button>View My Profile</button>
                 </Link>
                 <Link to="/">
                   <button>View Projects</button>
