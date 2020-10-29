@@ -10,7 +10,6 @@ import './AboutSkills.scss';
 const AboutSkills = ({ aboutInfo }) => {
   const dispatch = useDispatch();
 
-  console.log(aboutInfo)
   let loading = true;
   if(aboutInfo.tech === undefined) {
     loading = true;
