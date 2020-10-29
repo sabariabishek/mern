@@ -84,7 +84,7 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
                           placement="left">
                           <FormatShapesIcon/> 
                         </Tooltip>
-                        : item.type === 'illustration' ? 
+                        : item.type === 'Illustration' ? 
                         <Tooltip                          
                           title="Illustration" 
                           placement="left">
