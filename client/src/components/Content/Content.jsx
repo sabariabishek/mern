@@ -39,7 +39,10 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
   return (
     <section className="content--home">
       { loading ? 
-          <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          <section className="content__loading">
+            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <h3>Loading projects...</h3>
+          </section>
         :
           <section className="content__content">
           <article className="content__pagination">

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import './Gallery.scss';
-import { Left, Right } from '../../Icons/Icons';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Thumbnails from '../Thumbnails/Thumbnails';
 
 const Gallery = ({ clickedProject }) => {
@@ -30,24 +31,27 @@ const Gallery = ({ clickedProject }) => {
 
   return (
     <article className="modal__gallery">
-      <div className="modal__gallery__image">
-        <div className="modal__gallery__nav">
+      <article className="modal__gallery__image">
+        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
+      </article>
+      <section className="modal__thumbnav">
+        <article className="modal__gallery__nav">
           <a href="" onClick={(e) => {
                   e.preventDefault();
                   prevImage()
-                  }}><Left />
+                  }}><ArrowBackIosIcon />
           </a>
-        </div>
-        <img src={gallery[imageNumber]} alt="" className="modal__gallery__image__img"/>
-        <div className="modal__gallery__nav">
+        </article>
+        <Thumbnails clickedProject={clickedProject} clickedThumbnail={clickedThumbnail}/>
+        <article
+         className="modal__gallery__nav">
           <a href="" onClick={(e) => {
                   e.preventDefault();
                   nextImage()
-                  }}><Right/>
+                  }}><ArrowForwardIosIcon/>
           </a>
-        </div>
-      </div>
-      <Thumbnails clickedProject={clickedProject} clickedThumbnail={clickedThumbnail}/>
+        </article>
+      </section>
     </article>
   );
 }

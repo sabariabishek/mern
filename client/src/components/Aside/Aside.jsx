@@ -55,8 +55,8 @@ const Aside = ({ aboutInfo }) => {
           <section className="sidebar__description">
             <p className="sidebar__description__p sidebar__description__p--salt">{aboutInfo.salt}</p>
             <article className="sidebar__links">
-              <LinkedInIcon />
-              <GitHubIcon />
+              <a href="https://www.linkedin.com/in/ninnihagstrom/" target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
+              <a href="https://github.com/ninnih" target="_blank" rel="noopener noreferrer"><GitHubIcon /></a>             
             </article>
           </section>
         </Fade>
