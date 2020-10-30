@@ -20,7 +20,7 @@
 
 		@media (min-width: $breakpoint-md) {
       width: 100px;
-      height: 100px;
+      min-height: 100px;
 		}
   }
 }

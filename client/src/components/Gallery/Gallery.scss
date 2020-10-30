@@ -28,7 +28,7 @@
     }
 
     &__thumbnails {
-      height: 100px;
+      min-height: 100px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -41,7 +41,7 @@
   }
 
   &__thumbnav {
-    height: 150px;
+    min-height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;

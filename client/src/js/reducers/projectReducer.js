@@ -23,15 +23,20 @@ const payload = action.payload;
       }
 
 		case FILTER_PROJECTS:
-      let result = state.all.filter((project, index) => {
-        if(payload.type === 'All') {
-          return project
-        } else if(project.type === payload.type){
-          return project
-        } else if(payload.type === "favourite" && project.favourite || payload.type === '' && project.favourite){
-          return project
-        }
-      })
+      let result = '';
+      if(state.all !== undefined) {
+        result = state.all.filter((project, index) => {
+          if(payload.type === 'All') {
+            return project
+          } else if(project.type === payload.type){
+            return project
+          } else if(payload.type === "favourite" && project.favourite || payload.type === '' && project.favourite){
+            return project
+          }
+        })
+      } else {
+        result = { loading: true }
+      }
 
       return {
         ...state,

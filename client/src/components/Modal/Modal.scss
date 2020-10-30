@@ -151,6 +151,25 @@
 		&__control {
 			display: flex;
 			align-items: baseline;
+			margin: 0;
+
+			@media (min-width: $breakpoint-md) {
+				margin: 0 10px;
+			}
+
+			&--mobile {
+				@media (min-width: $breakpoint-md) {
+					display: none;
+				}
+			}
+
+			&--desktop {
+				display: none;
+
+				@media (min-width: $breakpoint-md) {
+					display: flex;
+				}
+			}
 
 			&__item {
 				display: flex;

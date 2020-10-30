@@ -18,6 +18,8 @@
     }
 
     &__button {
+      display: flex;
+      align-items: center;
       min-width: 30px;
       height: fit-content;
       margin: 5px;
@@ -42,6 +44,7 @@
 
       svg {
         font-size: 1rem;
+        margin: 0 5px;
       }
     }
   }

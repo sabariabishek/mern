@@ -19,14 +19,28 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }
             {clickedProject.link ? <a href={clickedProject.link} target="_blank"><LinkedInIcon/></a> : null}
           </article>
         </article>
-        <div className="modal__header__button">
+        <article className="modal__controls">
+          <article className="modal__controls__control modal__controls__control--desktop">
+            <a href="" onClick={(e) => {
+                  e.preventDefault();
+                  previousProject()
+                  }}><h3 className="modal__controls__control__item modal__controls__control__item--left"><ArrowRightAltIcon />Previous project</h3></a>
+          </article>
+          <article className="modal__controls__control modal__controls__control--desktop">
+            <a href="" onClick={(e) => {
+                  e.preventDefault();
+                  nextProject()
+                  }}><h3 className="modal__controls__control__item">Next project<ArrowRightAltIcon/></h3></a>
+          </article>
+        </article>
+        <article className="modal__header__button">
           <a href="" onClick={(e) => {
               e.preventDefault();
               clickCloseModal(e.currentTarget)
               }} className="modal__header__close">
             <CancelIcon />
           </a>
-        </div>
+        </article>
       </section>
       <section className="modal__content">
         <Gallery clickedProject={clickedProject} />
@@ -42,13 +56,13 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }
         </article>
       </section>
       <section className="modal__controls">
-        <article className="modal__controls__control">
+        <article className="modal__controls__control modal__controls__control--mobile">
           <a href="" onClick={(e) => {
                 e.preventDefault();
                 previousProject()
                 }}><h3 className="modal__controls__control__item modal__controls__control__item--left"><ArrowRightAltIcon />Previous project</h3></a>
         </article>
-        <article className="modal__controls__control">
+        <article className="modal__controls__control modal__controls__control--mobile">
           <a href="" onClick={(e) => {
                 e.preventDefault();
                 nextProject()

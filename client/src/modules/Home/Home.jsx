@@ -50,6 +50,7 @@ const Home = () => {
   }
 
   const changeType = e => {
+    console.log(e.target.id)
     const type = e.target.id;
     dispatch(filterProjects({ type: type }))
     setType({ type: type})
