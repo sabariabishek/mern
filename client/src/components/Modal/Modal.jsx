@@ -32,14 +32,14 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }
                   nextProject()
                   }}><h3 className="modal__controls__control__item">Next project<ArrowRightAltIcon/></h3></a>
           </article>
-        </article>
-        <article className="modal__header__button">
+          <article className="modal__header__button">
           <a href="" onClick={(e) => {
               e.preventDefault();
               clickCloseModal(e.currentTarget)
               }} className="modal__header__close">
             <CancelIcon />
           </a>
+        </article>
         </article>
       </section>
       <section className="modal__content">

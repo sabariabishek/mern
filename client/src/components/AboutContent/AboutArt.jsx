@@ -50,6 +50,9 @@ const AboutArt = () => {
 					<article className="art__content__item">
 						<img src={butterfly} alt=""/>
 					</article>
+					<section>
+						<p>For as long as I can remember I have had either a brush or pen in my hand. Creating, drawing, painting is a life long passion and my skills in it are many. I prefer to paint with watercolours and gouache, but also know how to paint with acrylics, oil and digitally. Allthough painting and drawing is mainly a personal interest of mine it has given me a natural sense and skill in colour and form which helps and guides my design and development decisions daily.</p>
+					</section>
 					<section className="skill__button__wrapper">
 						<Link to="/">
 							<button 
