@@ -6,12 +6,13 @@
 		flex-direction: column;
     margin: 5px;
 		padding: 6px;
-		height: calc(50vh - 10px);
+		height: min-content ;
     background: rgb(52,231,228);
     background: linear-gradient(27deg, rgba(52,231,228,1) 0%, white 19%, rgba(52,231,228,1) 41%, white 66%, rgba(52,231,228,1) 82%, white 95%);    
 
 		@media (min-width: $breakpoint-md) {
 			flex-direction: row;
+			height: calc(50vh - 10px);
 		}
 		
 		&__image {
@@ -106,8 +107,12 @@
 			margin: 10px;
 
 			&--featured {
-				height: 75%;
+				height: 40vh;
 				overflow: hidden;
+				
+				@media (min-width: $breakpoint-md) {
+					height: 75%;
+				}
 			}
 
 			p {
