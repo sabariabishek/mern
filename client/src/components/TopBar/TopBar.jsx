@@ -21,9 +21,6 @@ const TopBar = ({openMenu, menuOpen}) => {
           <ContactIcon />
         </button>
       </NavLink> */}
-      <article className="header__button header__button--construction">
-        <h3 className="header__button__construction">Under construction</h3>
-      </article>
     </section>
   );
 }

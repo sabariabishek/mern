@@ -10,12 +10,12 @@ import AboutSkills from './AboutSkills';
 import AboutArt from './AboutArt';
 
 
-const AboutContent = ({ aboutInfo, educationData }) => {
+const AboutContent = ({ aboutInfo }) => {
   const ref = createRef();
   const [scroll, setScroll] = useState(true)
 
   useEffect(() => {
-    const scrolledContent = document.getElementById('test');
+    const scrolledContent = document.getElementById('scroll');
 
     scrolledContent.addEventListener("scroll", () => {
       const scrollCheck = scrolledContent.scrollTop < 400
@@ -43,7 +43,7 @@ const AboutContent = ({ aboutInfo, educationData }) => {
   });
 
   return (
-    <section className="content" id="test">
+    <section className="content" id="scroll">
       <section className="content__about">
         <span ref={ref}></span>
         <section className="content__about__image">

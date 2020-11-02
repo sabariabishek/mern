@@ -7,7 +7,7 @@ const initialState = [];
 
 const projectReducer = (state = initialState, action) => {
 const payload = action.payload;
-
+  console.log(payload)
 	switch (action.type) {
 		case GET_PROJECTS:
       let favourites = payload.filter((project, index) => {

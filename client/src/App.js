@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Router, Route, Switch } from "react-router";
-import { useDispatch, useSelector } from 'react-redux'
-import { loadProjects, filterProjects } from './js/actions/index';
-
-import { Link, NavLink } from 'react-router-dom';
-import { HomeIcon, AboutIcon, ContactIcon, Menu, Close } from './Icons/Icons'
+import { useDispatch } from 'react-redux'
+import { loadProjects, loadPosts } from './js/actions/index';
 
 import Header from './components/Header/Header.jsx';
 import Aside from './components/Aside/Aside.jsx';
@@ -18,7 +14,6 @@ const App = () => {
 
   const [aboutInfo, setAboutInfo] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [educationData, setEducationData] = useState([]);
 
   const getProjects = () => {
     fetch('/api/data')
@@ -34,10 +29,10 @@ const App = () => {
     .catch(error => console.log(error))
   }
 
-  const getEducation = () => {
-    fetch('/api/info')
+  const getPosts = () => {
+    fetch('/api/posts')
     .then(res => res.json())
-    .then(data => setEducationData(data.data[0].education))
+    .then(data => dispatch(loadPosts(data.data)))
     .catch(error => console.log(error))
   }
 
@@ -48,7 +43,7 @@ const App = () => {
   useEffect(() => {
     getProjects()
     getInfo()
-    getEducation()
+    getPosts()
   }, [])
 
   useEffect(() => {
@@ -61,10 +56,11 @@ const App = () => {
         <TopBar 
           openMenu={openMenu} 
           menuOpen={menuOpen}/>
-        <Header menuOpen={menuOpen}/>
+        <Header 
+          menuOpen={menuOpen}
+          openMenu={openMenu}/>
         <Main 
-          aboutInfo={aboutInfo} 
-          educationData={educationData}/>
+          aboutInfo={aboutInfo}/>
         <Aside 
           aboutInfo={aboutInfo}/>
       </section>

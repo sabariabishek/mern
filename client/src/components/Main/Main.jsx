@@ -3,22 +3,22 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from '../../modules/Home/Home';
 import About from '../../modules/About/About';
-import Contact from '../../modules/Contact/Contact';
-import AboutContent from '../AboutContent/AboutContent';
+import Blog from '../../modules/Blog/Blog';
 
 const Main = (props) => {
-  const { projectData, aboutInfo, educationData } = props;
+  const { projectData, aboutInfo } = props;
 
   return (
     <Switch> 
       <Route exact path='/' render={(props) => <Home {...props} />}></Route>
       <Route exact path='/about' render={(props) => <About {...props} 
         projectData={projectData} 
-        aboutInfo={aboutInfo} 
-        educationData={educationData}/>}>
+        aboutInfo={aboutInfo}/>}>
       </Route>
       <Route exact path='/contact' render={(props) => <Home {...props} 
         projectData={projectData}/>}>
+      </Route>
+      <Route exact path='/blog' render={(props) => <Blog {...props} />}>
       </Route>
     </Switch>
   );

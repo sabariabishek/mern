@@ -1,5 +1,6 @@
-const Project = require('../model/project-models')
-const Info = require('../model/info-models')
+const Project = require('../model/project-models');
+const Info = require('../model/info-models');
+const Posts = require('../model/posts-models');
 
 createProject = (req, res) => {
   const body = req.body
@@ -51,20 +52,6 @@ getProject = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-getDevProject = async (req, res) => {
-    await Project.find({ type: 'Dev' }, (err, projects) => {
-        if (err) {
-            return res.status(400).json({ success: false, error: err })
-        }
-        if (!projects.length) {
-            return res
-                .status(404)
-                .json({ success: false, error: `Projects not found` })
-        }
-        return res.status(200).json({ success: true, data: projects })
-    }).catch(err => console.log(err))
-}
-
 getInfo = async (req, res) => {
     await Info.find({}, (err, information) => {
         if (err) {
@@ -79,9 +66,23 @@ getInfo = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+getPosts = async (req, res) => {
+    await Posts.find({}, (err, posts) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err })
+        }
+        if (!posts.length) {
+            return res
+                .status(404)
+                .json({ success: false, error: `Projects not found` })
+        }
+        return res.status(200).json({ success: true, data: posts })
+    }).catch(err => console.log(err))
+}
+
 module.exports = {
     createProject,
     getProject,
-    getDevProject,
     getInfo,
+    getPosts,
 }
