@@ -1,0 +1,112 @@
+@import "../variables.scss";
+
+.modal {
+	&--blog {
+		overflow: hidden;
+	}
+
+	&__content {
+		max-width: 1600px;
+		margin: 0 auto;
+		height: 100%;
+
+		&__text {
+			width: 100%;
+			height: 100%;
+			padding-bottom: 80px;
+			overflow: scroll;
+
+			@media (min-width: $breakpoint-md) {
+				width: 50%;
+			}
+
+			p {
+				margin: 20px 30px;
+				line-height: 24px;
+			}
+
+			ul {
+				background-color: whitesmoke;
+				margin: 10px 25px 10px 45px;
+				padding: 10px;
+
+				li {
+					margin: 10px 20px;
+				}
+			}
+		}
+	}
+
+	&__bloginfo {
+		width: 100%;
+
+		@media (min-width: $breakpoint-md) {
+			width: 50%;
+		}
+
+		h3 {
+			margin-top: 20px;
+			padding: 0 20px 0 10px;
+			text-transform: uppercase;
+			font-family: "Montserrat", sans-serif;
+			font-weight: 700;
+			font-size: 16px;
+		}
+
+		p {
+			padding: 0 20px 20px 10px;
+			border-bottom: 1px dotted lightgrey;
+		}
+
+		&__image {
+			width: 100%;
+
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 40vh;
+			}
+		}
+
+		&__tags {
+			display: flex;
+			flex-wrap: wrap;
+
+			h3 {
+				height: -moz-fit-content;
+				height: fit-content;
+				width: fit-content;
+				margin: 5px;
+				padding: 0px 7px 3px 7px;
+				border-radius: 15px;
+				background-color: #485460;
+				border: 1px solid #485460;
+				color: #d2dae2;
+				text-transform: lowercase;
+				font-style: italic;	
+				font-weight: 500;
+			}
+		}
+
+		&__text {
+			padding: 30px;
+		}
+	}
+
+	&__header {
+		&__time {
+			color: lightgrey;
+			margin-left: 30px;
+
+			h3 {
+				font-weight: 400;
+				font-size: 0.9rem;
+			}
+		}
+
+		&__title {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}

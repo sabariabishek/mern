@@ -63,10 +63,10 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
             return (
               <Fade up>
                 <article key={index} className={`content__item content__item--${item.id}`} 
-                onClick={(e) => {
-                  e.preventDefault();
-                  openModal(e.currentTarget, projectData.indexOf(item))
-                  }}>
+                  onClick={(e) => {
+                    e.preventDefault();
+                    openModal(e.currentTarget, projectData.indexOf(item))
+                    }}>
                   <div className="content__item__hover"></div>
                   <div className="content__item__header">
                     <div className="content__item__header__title">

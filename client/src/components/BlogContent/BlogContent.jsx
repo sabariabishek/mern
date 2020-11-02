@@ -5,6 +5,7 @@ import './BlogContent.scss';
 import Image from '../../assets/images/others/salt.jpg';
 import Fade from 'react-reveal/Fade';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import BlogModal from './BlogModal';
 
 const BlogContent = () => {
 	let blogPosts = useSelector(state => state.postReducer.results);
@@ -37,6 +38,20 @@ const BlogContent = () => {
       block: 'start',
     })
 	}
+
+	const [modal, setModal] = useState(false);
+  const [postIndex, setPostIndex] = React.useState([]);
+	const [clickedPost, setClickedPost] = React.useState('');
+	
+  const openModal = (e, index) => {
+    {!modal ? setModal(true) : setModal(false)}
+    {!modal ? setPostIndex(index) : setPostIndex('')}
+    {!modal ? setClickedPost(blogPosts[index]) : setClickedPost('')}
+  }
+
+  const closeModal = () => {
+    { modal ? setModal(false) : setModal(true) }
+  }
 	
   return (
     <section className="content content--blog" id="scroll">
@@ -52,7 +67,7 @@ const BlogContent = () => {
 									return <Fade left>
 									<section className="blog__featured">
 										<section className="blog__featured__image">
-											<img src={Image} alt=""/>
+											<img src={post.image} alt=""/>
 											<h2>Featured post</h2>
 										</section>
 										<section className="blog__featured__info">
@@ -60,10 +75,15 @@ const BlogContent = () => {
 												<h2>{post.title}</h2>
 												<h3>{post.date} - {post.time}</h3>
 											</article>
-											<article className="blogpost__content__text" dangerouslySetInnerHTML={{__html: post.description}}>
+											<article 
+												className="blogpost__content__text blogpost__content__text--featured" 
+												dangerouslySetInnerHTML={{__html: post.text}}>
 											</article>
 											<article className="blogpost__content__readmore">
-												<h3>Read more...</h3>
+												<h3 onClick={(e) => {
+															e.preventDefault();
+															openModal(e.currentTarget, blogPosts.indexOf(post))
+															}}>Read more...</h3>
 											</article>
 										</section>
 									</section>
@@ -75,16 +95,23 @@ const BlogContent = () => {
 										if(post.featured === false) {
 											return(
 												<Fade up>
-													<article className="blogpost">
+													<article 
+														className="blogpost"
+														onClick={(e) => {
+															e.preventDefault();
+															openModal(e.currentTarget, blogPosts.indexOf(post))
+															}}>
 														<section className="blogpost__content">
 															<article className="blogpost__content__header">
 																<h2>{post.title}</h2>
 																<h3>{post.date} - {post.time}</h3>
 															</article>
 															<article className="blogpost__content__text">
-																<p dangerouslySetInnerHTML={{__html: post.description}}></p>
+																<p dangerouslySetInnerHTML={{__html: post.short}}></p>
 															</article>
-															<article className="blogpost__content__readmore"><h3>Read more...</h3></article>
+															<article className="blogpost__content__readmore">
+																<h3>Read more...</h3>
+															</article>
 														</section>
 														<section className="blogpost__image">
 															<img src={Image} alt=""/>
@@ -106,6 +133,12 @@ const BlogContent = () => {
       </article> 
       : null
     }
+		{ modal ? 
+			<BlogModal 
+				closeModal={closeModal}
+				postIndex={postIndex}
+				clickedPost={clickedPost}/> 
+			: null }
 			</section>
   );
 }

@@ -28,7 +28,7 @@ const Home = () => {
   }
 
   const clickCloseModal = () => {
-    {modal ? setModal(false) : setModal(true)}
+    { modal ? setModal(false) : setModal(true) }
   }
 
   const nextProject = () => {
