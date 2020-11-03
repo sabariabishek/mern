@@ -80,9 +80,9 @@ const Home = () => {
   return (
     <section className="content" id="home">
       <span ref={ref}></span>
-      <Tags 
+      {/* <Tags 
         changeType={changeType}
-        type={type}/>
+        type={type}/> */}
       <Content 
         openModal={openModal} 
         clickedProject={clickedProject} 

@@ -12,7 +12,7 @@ import SchoolIcon from '@material-ui/icons/School';
 import BrushIcon from '@material-ui/icons/Brush';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
+import SearchIcon from '@material-ui/icons/Search';
 
 const AboutTimeline = ({ aboutInfo, educationData }) => {
   let loading = true;
@@ -30,11 +30,11 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
           <article className="timeline__content">
             <VerticalTimeline>
               <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                date={`${aboutInfo.education[0].year} - present`}
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                className="vertical-timeline-element--education"
+                contentStyle={{ background: '#485460', color: '#fff' }}
+                contentArrowStyle={{ borderRight: '7px solid  #485460' }}
+                date={aboutInfo.education[0].year}
+                iconStyle={{ background: '#1e272e', color: '#fff' }}
                 icon={<SchoolIcon />}
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[0].program}</h3>
@@ -44,9 +44,11 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
                 </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
-                className="vertical-timeline-element--work"
+                className="vertical-timeline-element--education"
+                contentStyle={{ background: '#485460', color: '#fff' }}
+                contentArrowStyle={{ borderRight: '7px solid  #485460' }}
                 date={aboutInfo.education[1].year}
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                iconStyle={{ background: '#1e272e', color: '#fff' }}
                 icon={<SchoolIcon />}
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[1].program}</h3>
@@ -57,10 +59,12 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
                 </p>
               </VerticalTimelineElement>
               <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                date={aboutInfo.education[2].year}
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                icon={<SchoolIcon />}
+                className="vertical-timeline-element--education"
+                contentStyle={{ background: '#00d8d6', color: '#fff' }}
+                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 216, 214)' }}
+                date={`${aboutInfo.education[2].year} - present`}
+                iconStyle={{ background: '#1e272e', color: '#fff' }}
+                icon={<SearchIcon />}
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[2].program}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[2].school}, {aboutInfo.education[2].city}</h4>

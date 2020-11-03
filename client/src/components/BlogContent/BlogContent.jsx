@@ -64,7 +64,7 @@ const BlogContent = () => {
 							<>
 							{blogPosts.map(post => {
 								if(post.featured === true) {
-									return <Fade left>
+									return (
 									<section className="blog__featured">
 										<section className="blog__featured__image">
 											<img src={post.image} alt=""/>
@@ -86,8 +86,7 @@ const BlogContent = () => {
 															}}>Read more...</h3>
 											</article>
 										</section>
-									</section>
-								</Fade>
+									</section>)
 								} 
 							})}
 								<section className="blog__postlist">

@@ -1,7 +1,6 @@
 @import "../variables.scss";
 .skills {
   &__wrapper {
-    background-color: rgba(255,255,255,0.7);
     width: 100%;
   }
 }
@@ -27,25 +26,25 @@
     &__item {
       margin: 30px 20px;
       max-height: 100px;
-      width: calc(50% - 40px);
+      // width: calc(50% - 40px);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
 
       @media (min-width: $breakpoint-md) {
-        width: 150px;
+        // width: 150px;
       }
 
       &__image {
-        width: auto;
+        // width: auto;
         max-width: 50px;
         max-height: 80px;
         margin-bottom: 20px;
+        margin: 20px;
 
-        @media (min-width: $breakpoint-md) {
-          max-width: 100px;
-        }
+        // @media (min-width: $breakpoint-md) {
+        //   max-width: 100px;
+        // }
       }
     }
 

@@ -5,7 +5,7 @@
   bottom: 30px;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $orange-dark;
+  background-color: $teal-dark;
   border-radius: 50%;
   transition: ease-in-out 0.3s;
 
@@ -26,13 +26,14 @@
 }
 
 .content {
+
   &__about {
     display: flex;
     flex-direction: column;
     margin: 5px;
     padding: 6px;
-    background: rgb(52,231,228);
-    background: linear-gradient(27deg, rgba(52,231,228,1) 0%, white 19%, rgba(52,231,228,1) 41%, white 66%, rgba(52,231,228,1) 82%, white 95%);    
+    background: $background-dark;
+    color: white;
 
     @media (min-width: $breakpoint-md) {
 			flex-direction: row;
@@ -44,10 +45,6 @@
     
     &__image {
       width: 100%;
-   
-      @media (min-width: $breakpoint-lg) {
-        width: 50%;
-      }
 
       &__img {
         width: 100%;
@@ -55,6 +52,12 @@
         height: 100%;
         object-fit: cover;
         object-position: top;
+        filter: grayscale(20%);
+        transition: ease-in-out 0.5s;
+
+        &:hover {
+          filter: grayscale(0%);
+        }
       }
     }
 
@@ -68,12 +71,12 @@
       @media (min-width: $breakpoint-lg) {
         width: 50%;
         padding: 10px;
-        margin-left: 3%;
       }
 
       article {
         width: 100%;
         padding: 10px 0;
+        margin: 10px 0;
         border-bottom: 1px dotted white;
 
         h3 {
@@ -81,6 +84,12 @@
           font-family: $header-font;
           font-weight: 700;
           font-size: 16px;
+          color: whitesmoke;
+          letter-spacing: 2px;
+        }
+
+        p {
+          color: white;
         }
       }
 
@@ -96,6 +105,15 @@
           }
         }
       }
+
+      &--tech {
+        p {
+          display: flex;
+          flex-wrap: wrap;
+          background-color: whitesmoke;
+          padding: 15px;
+        }
+      }
     }
 
     &__header {
@@ -104,6 +122,7 @@
 
       h1 {
         font-size: 28px;
+        color: whitesmoke;
 
         @media (min-width: $breakpoint-lg) {
           font-size: 4vw;
@@ -117,17 +136,17 @@
         margin: 10px 0;
         text-transform: initial;
         text-align: justify;
+        color: whitesmoke;
 
         @media (min-width: $breakpoint-lg) {
           width: 75%;
-          margin: 30px 0;
+          margin: 5% 0;
           text-align: left;
         }
       }
     }
 
     &__wrapper {
-      background-color: rgba(255,255,255, 0.7);;
       padding: 5%;
     }
   }
@@ -139,11 +158,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 5% 0;
 
     button {
       padding: 10px 15px;
       margin: 30px 10px;
-      background-color: $orange-dark;
+      background-color: $teal-dark;
       color: white;
       font-family: "Montserrat", sans-serif;
       font-size: 16px;
@@ -153,7 +173,8 @@
       box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.15);
 
       &:hover {
-        background-color: $teal-dark;
+        background-color: $teal-darker;
+        cursor: pointer;
       }
     }
   }
@@ -169,9 +190,10 @@
         svg {
           transition: ease-in-out 0.5s;
           cursor: pointer;
+          color: white;
 
           &:hover {
-            fill: $teal-dark;
+            fill: $background-light;
           }
         }
       }

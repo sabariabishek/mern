@@ -1,12 +1,29 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 
 import './TopBar.scss';
 import { Link, NavLink } from 'react-router-dom';
 import { HomeIcon, AboutIcon, ContactIcon, Menu, Close } from '../../Icons/Icons'
+import { filterProjects } from '../../js/actions/index';
 
 
 const TopBar = ({openMenu, menuOpen}) => {
+  const dispatch = useDispatch();
 
+  const onClick = () => {
+    openMenu()
+  }
+
+  const [type, setType] = React.useState({
+    type: 'favourite'
+  })
+
+  const changeType = e => {
+    console.log(e.target.id)
+    const type = e.target.id;
+    dispatch(filterProjects({ type: type }))
+    setType({ type: type})
+  }
   return (
     <section className="main__section__topbar">
       <a onClick={(e) => {
@@ -16,11 +33,31 @@ const TopBar = ({openMenu, menuOpen}) => {
         {!menuOpen ? <Menu /> : <Close />}
       </a>
       <h1 className="main__section__name">Ninni H.</h1>
-      {/* <NavLink to="/contact" exact>
-        <button className="header__button">
-          <ContactIcon />
-        </button>
-      </NavLink> */}
+        <nav className="navigation">
+          <li><Link to="/"><h3>about me</h3></Link></li>
+          <li  
+            onClick={(e) => {
+              e.preventDefault();
+              changeType(e)
+              }}><NavLink to="/projects"><h3 id="design"
+              >design</h3></NavLink></li>
+          <li
+            onClick={(e) => {
+              e.preventDefault();
+              changeType(e)
+              }}><NavLink to="/projects"><h3 id="Development">development</h3></NavLink></li>
+          <li
+            onClick={(e) => {
+              e.preventDefault();
+              changeType(e)
+              }}><NavLink to="/projects"><h3 id="Illustration">illustration</h3></NavLink></li>
+          <li
+            onClick={(e) => {
+              e.preventDefault();
+              changeType(e)
+              }}><NavLink to="/blog"><h3 id="Illustration">writing</h3></NavLink></li>
+
+        </nav>
     </section>
   );
 }

@@ -46,7 +46,7 @@ const BlogModal = ({ closeModal, postIndex, clickedPost }) => {
 						</section>
 						<h3>Description:</h3><p>{clickedPost.description}</p>
 						<h3>Written by:</h3><p>{clickedPost.writer}</p>
-						<h3>Source:</h3><p>{clickedPost.source}</p>
+						<h3>Source:</h3><p dangerouslySetInnerHTML={{__html: clickedPost.source}}></p>
 					</section>
         </article>
       </section>

@@ -10,8 +10,8 @@ const Main = (props) => {
 
   return (
     <Switch> 
-      <Route exact path='/' render={(props) => <Home {...props} />}></Route>
-      <Route exact path='/about' render={(props) => <About {...props} 
+      <Route exact path='/projects' render={(props) => <Home {...props} />}></Route>
+      <Route exact path='/' render={(props) => <About {...props} 
         projectData={projectData} 
         aboutInfo={aboutInfo}/>}>
       </Route>

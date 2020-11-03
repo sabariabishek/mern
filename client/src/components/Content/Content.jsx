@@ -57,7 +57,7 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
                 onChange={handleChange}
               />
             </article>
-            <article>Total projects showing: {projectData.length}</article>
+            <article></article>
           </article>
           {_DATA.currentData().map((item, index) => {
             return (

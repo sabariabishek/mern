@@ -22,22 +22,7 @@ const Aside = ({ aboutInfo }) => {
   return (
     <aside className="sidebar">
       <section className="sidebar__description">
-        <Fade right>
           <section className="slider">
-            <Slide easing="ease">
-              <article className="each-slide">
-                <article style={{'backgroundImage': `url(${slideImages[0]})`}}>
-                </article>
-              </article>
-              <article className="each-slide">
-                <article style={{'backgroundImage': `url(${slideImages[1]})`}}>
-                </article>
-              </article>
-              <article className="each-slide">
-                <article style={{'backgroundImage': `url(${slideImages[2]})`}}>
-                </article>
-              </article>
-            </Slide>
             <section className="slider__overlay">
               <h1 className="slider__header">I am a Full-stack JavaScript Developer, Designer and Illustrator</h1>
               <article>
@@ -50,7 +35,6 @@ const Aside = ({ aboutInfo }) => {
               </article>
             </section>
         </section>
-        </Fade>
         <Fade right>
           <section className="sidebar__description">
             <p className="sidebar__description__p sidebar__description__p--salt">{aboutInfo.salt}</p>

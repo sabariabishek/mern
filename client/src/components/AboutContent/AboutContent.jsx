@@ -42,6 +42,14 @@ const AboutContent = ({ aboutInfo }) => {
     });
   });
 
+  let loading = true;
+  console.log(aboutInfo.tech)
+  if(aboutInfo.tech === undefined) {
+    loading = true;
+  } else {
+    loading = false;
+  }
+
   return (
     <section className="content" id="scroll">
       <section className="content__about">
@@ -57,13 +65,12 @@ const AboutContent = ({ aboutInfo }) => {
         <Fade right>
           <section className="content__about__wrapper">
             <article className="content__about__header">
-              <h1>Hello, my name is Ninni Hagström</h1>
-              <p>{aboutInfo.about}</p>
+              <h1>Hello, my name is Ninni</h1>
+              {/* <p>{aboutInfo.about}</p> */}
             </article>
             <article className="content__about__info">
               <article><h3>location:</h3><p>{aboutInfo.city}</p></article>
               <article><h3>skills:</h3><p> Webdevelopment, Illustration, Design</p></article>
-              <article><h3>Languages:</h3><p>{aboutInfo.languages}</p></article>
               <article><h3>Interests:</h3><p>{aboutInfo.interests}</p></article>
               <article className="content__about__info--links">
                 <h3>Links:</h3>
@@ -80,6 +87,7 @@ const AboutContent = ({ aboutInfo }) => {
                   </li>
                 </ul>
               </article>
+
             </article>
             <article className="information__navigation">
                 <a href="#development"><button>Development</button></a>
@@ -90,12 +98,9 @@ const AboutContent = ({ aboutInfo }) => {
           </section>
         </Fade>
       </section>
-    <span id="development"></span>
-    <AboutSkills aboutInfo={aboutInfo}/>
     <span id="timeline"></span>
     <AboutTimeline aboutInfo={aboutInfo}/>
-    <span id="illustration"></span>
-    <AboutArt />
+    <AboutSkills aboutInfo={aboutInfo}/>
     {!scroll ? 
       <article
         className="scroll"
