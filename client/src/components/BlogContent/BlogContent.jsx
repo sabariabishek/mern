@@ -2,7 +2,6 @@ import React, { createRef, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
 import './BlogContent.scss';
-import Image from '../../assets/images/others/salt.jpg';
 import Fade from 'react-reveal/Fade';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import BlogModal from './BlogModal';
@@ -113,7 +112,7 @@ const BlogContent = () => {
 															</article>
 														</section>
 														<section className="blogpost__image">
-															<img src={Image} alt=""/>
+															<img src={post.image} alt=""/>
 														</section>
 													</article>
 												</Fade>
