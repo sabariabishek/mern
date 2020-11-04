@@ -30,6 +30,11 @@
       left: 14px;
       z-index: 90;
       cursor: pointer;
+      display: block;
+
+      @media (min-width: $breakpoint-md) {
+        display: none;
+      }
 
       svg {
         width: 25px;
@@ -40,7 +45,7 @@
       color: whitesmoke;
       position: fixed;
       top: 15px;
-      left: 78px;
+      left: 50px;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
       text-transform: uppercase;
@@ -53,8 +58,12 @@
   position: fixed;
   left: 220px;
   top: 17px;
-  display: flex;
   list-style-type: none;
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+  }
 
   h3 {
     margin: 0 10px;

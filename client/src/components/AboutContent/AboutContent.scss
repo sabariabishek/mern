@@ -11,11 +11,11 @@
 
   @media (min-width: $breakpoint-md) {
     bottom: 30px;
-    left: 72%;
+    left: 75%;
   }
 
   &:hover {
-    background-color: $background-dark;
+    background-color: $teal-darker;
     cursor: pointer;
   }
 
@@ -26,7 +26,6 @@
 }
 
 .content {
-
   &__about {
     display: flex;
     flex-direction: column;
@@ -39,6 +38,10 @@
 			flex-direction: row;
     }
 
+    &--logos {
+      flex-wrap: wrap;
+    }
+    
     &--art {
       flex-direction: column;
     }
@@ -68,8 +71,13 @@
       padding: 0px;
       margin-left: 0%;
 
+      @media (min-width: $breakpoint-md) {
+        width: 90%;
+        padding: 10px;
+      }
+
       @media (min-width: $breakpoint-lg) {
-        width: 50%;
+        width: 90%;
         padding: 10px;
       }
 
@@ -80,16 +88,28 @@
         border-bottom: 1px dotted white;
 
         h3 {
-          text-transform: uppercase;
           font-family: $header-font;
           font-weight: 700;
           font-size: 16px;
           color: whitesmoke;
           letter-spacing: 2px;
+
+          @media (min-width: $breakpoint-md) {
+            font-size: 1vw;
+          }
         }
 
         p {
           color: white;
+          font-size: 16px;
+
+          a {
+            color: $teal-dark;
+          }
+
+          @media (min-width: $breakpoint-md) {
+            font-size: 1vw;
+          }
         }
       }
 
@@ -117,15 +137,19 @@
     }
 
     &__header {
-      text-transform: uppercase;
+      text-transform: inherit;
       font-family: $header-font;
 
       h1 {
         font-size: 28px;
         color: whitesmoke;
 
+        @media (min-width: $breakpoint-md) {
+          font-size: 2vw;
+        }
+
         @media (min-width: $breakpoint-lg) {
-          font-size: 4vw;
+          font-size: 3vw;
         }
       }
 
@@ -148,6 +172,7 @@
 
     &__wrapper {
       padding: 5%;
+      margin: auto;
     }
   }
 }

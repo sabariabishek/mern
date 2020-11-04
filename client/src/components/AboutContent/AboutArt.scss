@@ -1,4 +1,83 @@
 @import "../variables.scss";
+.slider {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+	
+	section {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    position: initial;
+    top: inherit;
+		left: 0;
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(30, 39, 46, 0.35);
+    -webkit-backdrop-filter: blur(15px);
+		backdrop-filter: blur(30px);
+
+		@media (min-width: $breakpoint-md) {
+			position: absolute;
+			width: 50%;
+			top: 0;
+		}
+		
+		h3 {
+			font-weight: 700;
+			letter-spacing: 2px;
+		}
+
+		p {
+			color: white;
+			border-bottom: 1px dotted white;
+			padding-bottom: 15px;
+		}
+
+		a {
+			margin: 0 auto;
+			
+			button {
+				background-color: rgba(0, 0, 0, 0.15);
+				-webkit-backdrop-filter: blur(5px);
+				backdrop-filter: blur(5px);
+				padding: 10px 15px;
+				border: 2px solid whitesmoke;
+				border-radius: 30px;
+				color: whitesmoke;
+				font-family: "Montserrat";
+				letter-spacing: 1px;
+				transition: ease-in-out 0.5s;
+
+				&:hover {
+					background-color: rgba(255, 255, 255, .35);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+.react-slideshow-container {
+  .default-nav {
+    display: none;
+  } 
+}
+
+.each-slide > article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 80vh;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
 
 .art {
 	width: 100%;
@@ -6,21 +85,19 @@
 	&__wrapper {
 		width: 100%;
 		margin: 0 auto;
-		margin-bottom: 50px;
 	}
+
 	&__content {
-		width: 80%;
+		width: 100%;
 		max-width: 1200px;
-		margin: 30px auto;
+		margin: auto;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		background-color: white;
 
 		section {
       p {
-        width: 70%;
-        margin: 10px auto 30px auto;
+        margin: 10px auto 10px auto;
       }
     }
 

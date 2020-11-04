@@ -15,6 +15,7 @@
 			height: 100%;
 			padding-bottom: 80px;
 			overflow: scroll;
+			overflow-x: hidden;
 
 			@media (min-width: $breakpoint-md) {
 				width: 50%;

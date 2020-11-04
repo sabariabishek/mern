@@ -23,17 +23,15 @@ const Aside = ({ aboutInfo }) => {
     <aside className="sidebar">
       <section className="sidebar__description">
           <section className="slider">
-            <section className="slider__overlay">
               <h1 className="slider__header">I am a Full-stack JavaScript Developer, Designer and Illustrator</h1>
-              <article>
+              {/* <article>
                 <Link to="/about">
                   <button>View My Profile</button>
                 </Link>
                 <Link to="/">
                   <button>View Projects</button>
                 </Link>
-              </article>
-            </section>
+              </article> */}
         </section>
         <Fade right>
           <section className="sidebar__description">

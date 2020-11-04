@@ -7,6 +7,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import AboutTimeline from './AboutTimeline';
 import AboutSkills from './AboutSkills';
+import AboutSkill from './AboutSkill';
 import AboutArt from './AboutArt';
 
 
@@ -65,12 +66,18 @@ const AboutContent = ({ aboutInfo }) => {
         <Fade right>
           <section className="content__about__wrapper">
             <article className="content__about__header">
-              <h1>Hello, my name is Ninni</h1>
-              {/* <p>{aboutInfo.about}</p> */}
+              <h1>Hello there,<br/> my name is Ninni</h1>
             </article>
             <article className="content__about__info">
-              <article><h3>location:</h3><p>{aboutInfo.city}</p></article>
-              <article><h3>skills:</h3><p> Webdevelopment, Illustration, Design</p></article>
+              <article><h3>Location:</h3><p>{aboutInfo.city}</p></article>
+              <article>
+                <h3>Skills:</h3>
+                <p> 
+                  <a href="#Dev">Development</a>, 
+                  <a href="#Design">Design</a>,
+                  <a href="#art">Illustration</a> 
+                </p>
+              </article>
               <article><h3>Interests:</h3><p>{aboutInfo.interests}</p></article>
               <article className="content__about__info--links">
                 <h3>Links:</h3>
@@ -89,18 +96,20 @@ const AboutContent = ({ aboutInfo }) => {
               </article>
 
             </article>
-            <article className="information__navigation">
+            {/* <article className="information__navigation">
                 <a href="#development"><button>Development</button></a>
                 <a href="#design"><button>Design</button></a>
                 <a href="#timeline"><button>Education</button></a>
                 <a href="#illustration"><button>Illustration</button></a>
-              </article>
+              </article> */}
           </section>
         </Fade>
       </section>
     <span id="timeline"></span>
     <AboutTimeline aboutInfo={aboutInfo}/>
-    <AboutSkills aboutInfo={aboutInfo}/>
+    {/* <AboutSkills aboutInfo={aboutInfo}/> */}
+    <AboutSkill aboutInfo={aboutInfo}/>
+    <AboutArt/>
     {!scroll ? 
       <article
         className="scroll"

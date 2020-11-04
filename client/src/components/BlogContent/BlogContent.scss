@@ -45,6 +45,7 @@
 
 			@media (min-width: $breakpoint-md) {
 				width: 50%;
+				height: calc(50vh - 20px);
 			}
 		}
 	}

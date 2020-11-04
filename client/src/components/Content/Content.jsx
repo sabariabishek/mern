@@ -45,7 +45,7 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
           </section>
         :
           <section className="content__content">
-          <article className="content__pagination">
+          {/* <article className="content__pagination">
             <article></article>
             <article>
             <Pagination
@@ -58,7 +58,7 @@ function Content({ projectIndex, openModal, clickCloseModal, clickedProject, mod
               />
             </article>
             <article></article>
-          </article>
+          </article> */}
           {_DATA.currentData().map((item, index) => {
             return (
               <Fade up>

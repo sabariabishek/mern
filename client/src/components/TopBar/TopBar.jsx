@@ -32,7 +32,7 @@ const TopBar = ({openMenu, menuOpen}) => {
           }} className="main__section__menu">
         {!menuOpen ? <Menu /> : <Close />}
       </a>
-      <h1 className="main__section__name">Ninni H.</h1>
+      <Link to="/"><h1 className="main__section__name">Ninni H.</h1></Link>
         <nav className="navigation">
           <li><Link to="/"><h3>about me</h3></Link></li>
           <li  

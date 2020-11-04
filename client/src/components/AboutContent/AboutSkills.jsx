@@ -41,25 +41,27 @@ const AboutSkills = ({ aboutInfo }) => {
                 <p>As a developer I lean naturally toward front-end and UI/UX because of my past experiences with design and illustration, but I enjoy working Full-Stack a lot as well.</p>
                 <p>My strenghts lay in being able to understand client/user needs and translating them into beatiful, smart and useful applications.</p>
               </section>
-            {
-              aboutInfo.tech.map(tech => {
-                if(tech.type === 'dev') {
-                  return <Fade up><article className="skill__content__item">
-                    <img src={process.env.PUBLIC_URL + tech.image} alt="" className="skill__content__item__image"/>
-                    <h3>{tech.name}</h3>
-                  </article></Fade>
-                }
-              })
-            }
-              <article className="skill__button__wrapper">
-                <Link to="/">
-                  <button 
-                    className="skill__button" 
-                    value="Development"
-                    onClick={changeType}>View web projects
-                  </button>
-                </Link>
-              </article>
+              <section>
+                {
+                aboutInfo.tech.map(tech => {
+                  if(tech.type === 'dev') {
+                    return <Fade up><article className="skill__content__item">
+                      <img src={process.env.PUBLIC_URL + tech.image} alt="" className="skill__content__item__image"/>
+                      <h3>{tech.name}</h3>
+                    </article></Fade>
+                  }
+                })
+              }
+                <article className="skill__button__wrapper">
+                  <Link to="/">
+                    <button 
+                      className="skill__button" 
+                      value="Development"
+                      onClick={changeType}>View web projects
+                    </button>
+                  </Link>
+                </article>
+              </section>
             </article>
           </section>
           <section className="skill skill--design">

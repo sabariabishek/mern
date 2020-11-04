@@ -13,6 +13,13 @@ import Image from '../../assets/images/others/salt.jpg';
 const BlogModal = ({ closeModal, postIndex, clickedPost }) => {
 	console.log(clickedPost)
   return (
+		<>
+		<section 
+		className="underlay" 
+		onClick={(e) => {
+			e.preventDefault();
+			closeModal(e.currentTarget)
+			}}></section>
     <section className="modal modal--blog">
       <section className="modal__header">
         <article className="modal__header__title modal__header__title--blog">
@@ -51,6 +58,7 @@ const BlogModal = ({ closeModal, postIndex, clickedPost }) => {
         </article>
       </section>
     </section>
+		</>
   );
 }
 

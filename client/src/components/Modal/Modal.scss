@@ -1,5 +1,15 @@
 @import "../variables.scss";
 
+.underlay {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30000;
+}
+
 .modal {
 	position: fixed;
 	top: 50%;
@@ -22,12 +32,12 @@
 	@media (min-width: $breakpoint-md) {
 		left: 50%;
 		width: calc(80% - 10px);
-		height: calc(90vh - 62px);
+		height: calc(100vh - 62px);
 	}
 			
 	&__header {
 		background-color: $background-dark;
-		position: sticky;
+		position: initial;
 		top: 0;
 		left: 0;
 		padding: 10px;
@@ -88,7 +98,7 @@
 
 		@media (min-width: $breakpoint-md) {
 			flex-direction: row;
-			padding: 30px 10px;
+			padding: 5px 10px;
 			margin-left: 10px;
 		}
 

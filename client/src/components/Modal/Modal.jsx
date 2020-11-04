@@ -7,16 +7,24 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import { Github, WebLink } from '../../Icons/Icons';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkIcon from '@material-ui/icons/Link';
 
 const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }) => {
   return (
+    <>
+    <section 
+      className="underlay" 
+      onClick={(e) => {
+        e.preventDefault();
+        clickCloseModal(e.currentTarget)
+        }}></section>
     <section className="modal">
       <section className="modal__header">
         <article className="modal__header__title">
           <h2 className="modal__header__title__text">{clickedProject.projectName}</h2>
           <article className="modal__header__title__link">
             {clickedProject.github ? <a href={clickedProject.github} target="_blank"><GitHubIcon/></a> : null}
-            {clickedProject.link ? <a href={clickedProject.link} target="_blank"><LinkedInIcon/></a> : null}
+            {clickedProject.link ? <a href={clickedProject.link} target="_blank"><LinkIcon/></a> : null}
           </article>
         </article>
         <article className="modal__controls">
@@ -70,6 +78,7 @@ const Modal = ({ clickedProject, clickCloseModal, nextProject, previousProject }
         </article>
       </section>
     </section>
+    </>
   );
 }
 

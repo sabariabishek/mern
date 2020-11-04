@@ -62,6 +62,8 @@
   
   &--home {
     position: relative;
+    background-color: $background-dark;
+    margin: 5px;
   }
 
   &__divider {
@@ -74,16 +76,11 @@
 
   &__item {
     position: relative;
-    width: calc(50% - 10px);
-    margin: 5px;
+    width: calc(50% - 20px);
+    margin: 10px;
     transition: all 500ms ease-in-out;
     background-color: $background-dark;
-    filter: grayscale(90%);
-
-    @media (min-width: $breakpoint-md) {
-      width: 100%;
-      margin: 15px;
-    }
+    filter: grayscale(75%);
 
     &:hover {
       cursor: pointer;
@@ -94,24 +91,23 @@
     }
 
     @media (min-width: $breakpoint-md) {
-      width: calc(50% - 30px);
+      width: calc(50% - 20px);
     }
     
-    @media (min-width: $breakpoint-lg) {
-      width: calc(33% - 30px);
+    @media (min-width: $breakpoint-xxl) {
+      width: calc(33% - 20px);
     }
 
     &__header {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      padding: 5px;
-      background-color: rgbA(30,39,46,0.95);
-      box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
-      -webkit-box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
-      -moz-box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
-      box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.55);
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      padding: 15px;
+      background-color: rgba(30, 39, 46, 0.35);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(10px);
+      border-radius: 3px;
 
       &__title {
         display: flex;
@@ -125,8 +121,7 @@
         }
 
         &__text {
-          color: #fff;
-          text-shadow: 1px 1px #000;
+          color: whitesmoke;
           font-family: $header-font;
           letter-spacing: 1.3px;
           font-weight: 500;
@@ -149,7 +144,7 @@
             color: $teal-dark;
 
             @media (min-width: $breakpoint-lg) {
-              font-size: 2rem;
+              font-size: 1.5rem;
             }
           }
         }
@@ -162,9 +157,12 @@
         height: 20vh;
         object-fit: cover;
 
-
         @media (min-width: $breakpoint-md) {
-          height: 30vh;
+          height: 45vh;
+        }
+        
+        @media (min-width: $breakpoint-xxl) {
+          height: 20vh;
         }
       }
     }
