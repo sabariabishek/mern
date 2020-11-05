@@ -63,6 +63,7 @@
   &--home {
     position: relative;
     background-color: $background-dark;
+    min-height: calc(100vh - 65px);
     margin: 5px;
   }
 
@@ -81,6 +82,7 @@
     transition: all 500ms ease-in-out;
     background-color: $background-dark;
     filter: grayscale(75%);
+    height: 20vh;
 
     &:hover {
       cursor: pointer;
@@ -92,10 +94,12 @@
 
     @media (min-width: $breakpoint-md) {
       width: calc(50% - 20px);
+      height: 45vh;
     }
     
     @media (min-width: $breakpoint-xxl) {
       width: calc(33% - 20px);
+      height: 30vh;
     }
 
     &__header {
@@ -162,7 +166,7 @@
         }
         
         @media (min-width: $breakpoint-xxl) {
-          height: 20vh;
+          height: 30vh;
         }
       }
     }

@@ -13,6 +13,10 @@ import BrushIcon from '@material-ui/icons/Brush';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import SearchIcon from '@material-ui/icons/Search';
+import DevicesIcon from '@material-ui/icons/Devices';
+import STU from '../../assets/images/others/stu.jpg';
+import Brighton from '../../assets/images/others/brighton2.jpg';
+import Salt from '../../assets/images/others/salt.jpg'
 
 const AboutTimeline = ({ aboutInfo, educationData }) => {
   let loading = true;
@@ -35,10 +39,11 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
                 contentArrowStyle={{ borderRight: '7px solid  #485460' }}
                 date={aboutInfo.education[0].year}
                 iconStyle={{ background: '#1e272e', color: '#fff' }}
-                icon={<SchoolIcon />}
+                icon={<SearchIcon />}
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[0].program}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[0].school}, {aboutInfo.education[0].city}</h4>
+                  <img src={STU}  alt=""/>
                 <p>
                   {aboutInfo.education[0].description}
                 </p>
@@ -53,6 +58,7 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[1].program}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[1].school}, {aboutInfo.education[1].city}</h4>
+                  <img src={Brighton} alt=""/>
                 <p>
                   {aboutInfo.education[1].description}<br/><br/>
                   <b>Graduated with: {aboutInfo.education[1].grade}</b>
@@ -64,10 +70,11 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 216, 214)' }}
                 date={`${aboutInfo.education[2].year} - present`}
                 iconStyle={{ background: '#1e272e', color: '#fff' }}
-                icon={<SearchIcon />}
+                icon={<DevicesIcon />}
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[2].program}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[2].school}, {aboutInfo.education[2].city}</h4>
+                 <img src={Salt}  alt=""/>
                 <p>
                   {aboutInfo.education[2].description}
                 </p>

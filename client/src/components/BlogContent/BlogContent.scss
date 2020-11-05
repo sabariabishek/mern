@@ -69,6 +69,7 @@
 .blogpost {
 	display: flex;
 	width: calc(100% - 10px);
+	height: 30vh;
 	background-color: white;
 	margin: 5px;
 	margin-top: 15px;
@@ -110,13 +111,19 @@
 
 		&__text {
 			margin: 10px;
+			display: none;
+			@media (min-width: $breakpoint-md) {
+				display: block;
+			}
 
 			&--featured {
+				display: block;
 				height: 40vh;
 				overflow: hidden;
 				
 				@media (min-width: $breakpoint-md) {
 					height: 75%;
+					display: block;
 				}
 			}
 
@@ -151,7 +158,7 @@
 
 	&__image {
 		width: 50%;
-		height: 25vh;
+		height: 30vh;
 
 		img {
 			object-fit: cover;

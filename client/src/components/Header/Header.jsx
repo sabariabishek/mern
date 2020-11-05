@@ -14,8 +14,9 @@ import { filterProjects } from '../../js/actions/index';
 const Header = ({ menuOpen, openMenu }) => {
   const dispatch = useDispatch();
 
-  const onClick = () => {
+  const onClick = (e) => {
     openMenu()
+    changeType(e)
   }
 
   const [type, setType] = React.useState({
@@ -23,7 +24,6 @@ const Header = ({ menuOpen, openMenu }) => {
   })
 
   const changeType = e => {
-    console.log(e.target.id)
     const type = e.target.id;
     dispatch(filterProjects({ type: type }))
     setType({ type: type})
@@ -36,27 +36,43 @@ const Header = ({ menuOpen, openMenu }) => {
         <img src="" alt="" className="header__logo"/>
         <nav className="header__navigation">
           <ul className="header__navigation__list">
-            <Tooltip title="projects" placement="right">
-              <NavLink to="/projects" exact onClick={onClick}>
+            <Tooltip title="about me" placement="right">
+              <NavLink to="/" exact onClick={onClick}>
                 <article className="header__navigation__list__item">
-                  <HomeOutlinedIcon />
-                  <h2 className="header__navigation__list__item__text">home</h2>
+                  {/* <AccountBoxOutlinedIcon /> */}
+                  <h2 id="" className="header__navigation__list__item__text">about me</h2>
                 </article>
               </NavLink>
             </Tooltip>
-            <Tooltip title="about" placement="right">
-              <NavLink to="/" exact onClick={onClick}>
+            <Tooltip title="design" placement="right">
+              <NavLink to="/projects" exact onClick={onClick}>
                 <article className="header__navigation__list__item">
-                  <AccountBoxOutlinedIcon />
-                  <h2 className="header__navigation__list__item__text">about</h2>
+                  {/* <AccountBoxOutlinedIcon /> */}
+                  <h2 id="design" className="header__navigation__list__item__text">design</h2>
+                </article>
+              </NavLink>
+            </Tooltip>
+            <Tooltip title="developmen" placement="right">
+              <NavLink to="/projects" exact onClick={onClick}>
+                <article className="header__navigation__list__item">
+                  {/* <AccountBoxOutlinedIcon /> */}
+                  <h2 id="Development" className="header__navigation__list__item__text">development</h2>
+                </article>
+              </NavLink>
+            </Tooltip>
+            <Tooltip title="illustration" placement="right">
+              <NavLink to="/projects" exact onClick={onClick}>
+                <article className="header__navigation__list__item">
+                  {/* <AccountBoxOutlinedIcon /> */}
+                  <h2 id="Illustration" className="header__navigation__list__item__text">illustration</h2>
                 </article>
               </NavLink>
             </Tooltip>
             <Tooltip title="blog" placement="right">
               <NavLink to="/blog" exact onClick={onClick}>
                 <article className="header__navigation__list__item">
-                  <MenuBookOutlinedIcon />
-                  <h2 className="header__navigation__list__item__text">blog</h2>
+                  {/* <MenuBookOutlinedIcon /> */}
+                  <h2 className="header__navigation__list__item__text">Writing</h2>
                 </article>
               </NavLink>
             </Tooltip>

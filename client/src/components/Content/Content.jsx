@@ -15,7 +15,7 @@ import { Tooltip } from '@material-ui/core';
 
 function Content({ projectIndex, openModal, clickCloseModal, clickedProject, modal, nextProject, previousProject, type }) {
   let projectData = useSelector(state => state.projectReducer.results);
-  console.log(projectData)
+
   let loading = false;
   
   if(projectData === undefined || projectData.loading) {
