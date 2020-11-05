@@ -7,8 +7,7 @@
     margin: 5px;
 		padding: 6px;
 		height: min-content ;
-    background: rgb(52,231,228);
-    background: linear-gradient(27deg, rgba(52,231,228,1) 0%, white 19%, rgba(52,231,228,1) 41%, white 66%, rgba(52,231,228,1) 82%, white 95%);    
+    background: $background-dark;
 
 		@media (min-width: $breakpoint-md) {
 			flex-direction: row;
@@ -41,7 +40,7 @@
 		&__info {
 			width: 100%;
 			height: auto;
-			background-color: white;
+			// background-color: white;
 			position: relative;
 
 			@media (min-width: $breakpoint-md) {
@@ -70,7 +69,7 @@
 	display: flex;
 	width: calc(100% - 10px);
 	height: 30vh;
-	background-color: white;
+	background-color:$background-dark;
 	margin: 5px;
 	margin-top: 15px;
 	transition: all 500ms ease-in-out;
@@ -113,6 +112,7 @@
 		&__text {
 			margin: 10px;
 			display: none;
+			color: whitesmoke;
 			@media (min-width: $breakpoint-md) {
 				display: block;
 			}
@@ -130,6 +130,7 @@
 
 			p {
 				margin: 30px 5%;
+				color: whitesmoke;
 			}
 		}
 
@@ -146,7 +147,7 @@
 				right: 0;
 				width: 100%;
 				padding: 15px;
-				background-color: rgba(255, 255, 255, 0.35);
+				background-color: rgba(30, 39, 46, 0.35);
 				-webkit-backdrop-filter: blur(5px);
 				backdrop-filter: blur(10px);
 
