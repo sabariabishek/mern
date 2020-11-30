@@ -37,7 +37,7 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
                 className="vertical-timeline-element--education"
                 contentStyle={{ background: '#485460', color: '#fff' }}
                 contentArrowStyle={{ borderRight: '7px solid  #485460' }}
-                date={aboutInfo.education[2].year}
+                date={`${aboutInfo.education[2].year} - present`}
                 iconStyle={{ background: '#1e272e', color: '#fff' }}
                 icon={<SearchIcon />}
               >
@@ -68,12 +68,12 @@ const AboutTimeline = ({ aboutInfo, educationData }) => {
                 className="vertical-timeline-element--education"
                 contentStyle={{ background: '#00d8d6', color: '#fff' }}
                 contentArrowStyle={{ borderRight: '7px solid  rgb(0, 216, 214)' }}
-                date={`${aboutInfo.education[0].year} - present`}
+                date={`${aboutInfo.education[0].year}`}
                 iconStyle={{ background: '#1e272e', color: '#fff' }}
                 icon={<DevicesIcon />}
               >
                 <h3 className="vertical-timeline-element-title">{aboutInfo.education[0].program}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[0].school}, {aboutInfo.education[2].city}</h4>
+                <h4 className="vertical-timeline-element-subtitle">{aboutInfo.education[0].school}, {aboutInfo.education[0].city}</h4>
                  <img src={STU}  alt=""/>
                 <p>
                   {aboutInfo.education[0].description}
