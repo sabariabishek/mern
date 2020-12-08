@@ -7,8 +7,7 @@
     margin: 5px;
 		padding: 6px;
 		height: min-content ;
-    background: rgb(52,231,228);
-    background: linear-gradient(27deg, rgba(52,231,228,1) 0%, white 19%, rgba(52,231,228,1) 41%, white 66%, rgba(52,231,228,1) 82%, white 95%);    
+    background: $background-dark;
 
 		@media (min-width: $breakpoint-md) {
 			flex-direction: row;
