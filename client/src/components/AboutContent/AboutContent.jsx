@@ -44,7 +44,6 @@ const AboutContent = ({ aboutInfo }) => {
   });
 
   let loading = true;
-  console.log(aboutInfo.tech)
   if(aboutInfo.tech === undefined) {
     loading = true;
   } else {
@@ -73,9 +72,9 @@ const AboutContent = ({ aboutInfo }) => {
               <article>
                 <h3>Skills:</h3>
                 <p> 
-                  <a href="#Dev">Development</a>, 
-                  <a href="#Design">Design</a>,
-                  <a href="#art">Illustration</a> 
+                  <a href="#Dev">Development</a>,  
+                  <a href="#Design"> Design</a>,
+                  <a href="#art"> Illustration</a> 
                 </p>
               </article>
               <article><h3>Interests:</h3><p>{aboutInfo.interests}</p></article>

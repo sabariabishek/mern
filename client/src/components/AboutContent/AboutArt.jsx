@@ -8,12 +8,12 @@ import 'react-slideshow-image/dist/styles.css'
 
 import face from "../../assets/images/art/face.jpg";
 import father from "../../assets/images/art/dad.jpg";
-import ImageOne from "../../assets/images/art/green.jpg";
+import ImageOne from "../../assets/images/art/main.jpg";
 import ImageThree from "../../assets/images/art/leaf.png";
 import boy from "../../assets/images/art/boy.jpg";
 import space from "../../assets/images/art/space.png";
 import raspberry from "../../assets/images/art/raspberry.jpg";
-import ImageTwo from "../../assets/images/art/butterfly.jpg";
+import ImageTwo from "../../assets/images/art/raspberry.jpg";
 import Fade from 'react-reveal/Fade';
 
 const slideImages = [

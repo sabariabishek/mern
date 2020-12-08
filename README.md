@@ -1,7 +1,10 @@
-# portfolio
-My own personal portfolio website.
+# Portfolio - 
+My own personal portfolio website. Showcases some of my web projects, illustration work and writing. 
 
-## WIP Heroku Link 
+## Heroku -
 http://ninnih-portfolio.herokuapp.com/
 
-Note: This website is under construction and the version on Heroku is a simple working draft. Check back later for the finished site. 
+## MERN Stack - MongoDb, Express.js, React, Node.js
+- Mongoose
+- React-Redux
+- Sass

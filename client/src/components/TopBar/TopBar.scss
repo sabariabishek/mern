@@ -27,7 +27,7 @@
     &__menu {
       position: fixed;
       top: 15px;
-      left: 14px;
+      right: 14px;
       z-index: 90;
       cursor: pointer;
       display: block;
@@ -45,7 +45,7 @@
       color: whitesmoke;
       position: fixed;
       top: 15px;
-      left: 50px;
+      left: 25px;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
       text-transform: uppercase;
@@ -70,9 +70,8 @@
     background-color: $background-dark;
     border: none;
     color: whitesmoke;
-    font-family: "Montserrat", sans-serif;
+    font-family: $paragraph;
     font-weight: 500;
-    text-transform: uppercase;
     transition: ease-in-out 0.3s;
 
 

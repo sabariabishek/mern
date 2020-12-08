@@ -11,7 +11,6 @@ import Image from '../../assets/images/others/salt.jpg';
 
 
 const BlogModal = ({ closeModal, postIndex, clickedPost }) => {
-	console.log(clickedPost)
   return (
 		<>
 		<section 
